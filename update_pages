@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /Users/radimhladik/repos/reports || exit
+cd ~/repos/reports || exit
 unset GIT_DIR
 
 git add --all && git commit -m "automated update $(date +%Y%m%d%H%M)"
