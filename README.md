@@ -1,4 +1,4 @@
-# reports
+# Reports
 
 
-[Shaming project](/shaming/index.md))
+[Shaming project](/shaming/index.md)
