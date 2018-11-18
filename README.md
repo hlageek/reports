@@ -1,3 +1,3 @@
 # reports
 
-link(./intercoder_shaming.md)
+[link](intercoder_shaming.md)
