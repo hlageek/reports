@@ -1,4 +1,7 @@
 #!/bin/bash
 
-git add --all && git commit -m "update $(date +%Y%m%d%H%M)"
+cd /Users/radimhladik/repos/reports || exit
+unset GIT_DIR
+
+git add --all && git commit -m "automated update $(date +%Y%m%d%H%M)"
 git push origin master
