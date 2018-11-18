@@ -1,4 +1,4 @@
 # reports
 
 
-[Shaming project](/shaming/))
+[Shaming project](/shaming))
