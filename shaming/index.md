@@ -1,5 +1,7 @@
-# Reports from the "shaming" research projet
+# Reports from the "shaming" research project 
 
-[Tests of intercoder reliability between humans and computer models](intercoder_shaming.nb.html))
 
-[Data processing](shaming_data_process.nb.html)
+[intercoder_shaming.nb.html_201811181710](intercoder_shaming.nb.html)
+
+[shaming_data_process.nb.html_201811181710](shaming_data_process.nb.html)
+
