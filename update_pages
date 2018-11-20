@@ -3,5 +3,6 @@
 cd ~/repos/reports || exit
 unset GIT_DIR
 
+git pull origin master
 git add --all && git commit -m "automated update $(date +%Y%m%d%H%M)"
 git push origin master
