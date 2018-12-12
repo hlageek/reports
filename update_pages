@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# git hook aka bash script to push to remote origin
+
 cd ~/repos/reports || exit
 unset GIT_DIR
 
