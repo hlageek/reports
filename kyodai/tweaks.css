@@ -1,0 +1,22 @@
+.title-slide {
+    background-size: cover;
+}
+.title-slide h1, h2, h3 {
+    text-align: center;
+    color: #F7F8FA;
+}
+
+.title-slide .remark-slide-number {
+    display: none;
+}
+
+div.my-footer {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    right:   8px;
+    height: 40px;
+    width: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
