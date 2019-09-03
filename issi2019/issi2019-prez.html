@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Why Sociologists Should Not Bother with Theory: The Effect of Topics on Citations</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Radim Hladík" />
+    <link href="issi2019-prez_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="issi2019-prez_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="issi2019-prez_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="issi2019-prez_files/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+layout: true
+&lt;!-- Define general layout features --&gt;
+ 
+&lt;!-- Logos --&gt;
+&lt;div class="my-logo-flu"&gt;&lt;/div&gt; 
+&lt;div class="my-logo-nii"&gt;&lt;/div&gt; 
+
+&lt;!-- Footer --&gt;
+&lt;div class="my-footer"&gt;&lt;span&gt;
+Radim Hladík    
+&amp;emsp;&amp;emsp;&amp;emsp;
+@hlageek
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+ISSI 2019, Rome (IT) September 4, 2019
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://hlageek.github.io/reports/issi2019 
+&lt;/span&gt;&lt;/div&gt; 
+
+---
+
+class: remark-title-header
+
+&lt;!-- Title slide --&gt;
+
+# .left[_Why Sociologists Should Not Bother with Theory_ &lt;br&gt; The Effect of Topics on Citations]
+
+&lt;!-- Left column --&gt;
+.pull-left.left[ 
+
+### ISSI 2019, Rome (IT) September 4, 2019
+
+&lt;!-- QR code --&gt;
+.center[
+&lt;img src="img/qr.png" height="300"&gt;  
+]
+
+**Slides online:** https://hlageek.github.io/reports/issi2019]
+
+&lt;!-- Right column --&gt;
+
+.pull-right.left[ ### Radim Hladík  
+<i class="fas  fa-university "></i> National Institute of Informatics (Tokyo, JP)  
+<i class="fas  fa-university "></i> Institute of Philosophy of the Czech Academy of Sciences (Prague, CZ)
+##### Contact
+<i class="fas  fa-envelope "></i> &lt;a href="mailto:radim.hladik@fulbrightmail.org "&gt;radim.hladik@fulbrightmail.org&lt;/a&gt;  
+<i class="fab  fa-twitter "></i> &lt;a href="http://twitter.com/hlageek"&gt;@hlageek&lt;/a&gt;
+
+##### Acknowledgement
+<i class="fas  fa-money-check-alt "></i> Grant-in-Aid for JSPS Fellows no. 17F17769.
+]
+
+
+---
+
+# Outline of the presentation
+
+.font200[
+1. Motivation
+2. Data
+3. Topic modeling 
+4. Citation counts modeling
+
+]
+
+---
+
+# Outline of the presentation
+
+.font200[
+
+1. Motivation
+2. Data
+3. Topic modeling <i class="fas  fa-arrow-circle-down "></i> (as an input)
+4. Citation counts modeling
+
+]
+
+---
+class: center, middle, inverse
+
+# Motivation
+
+
+---
+
+# Citation patterns are field-dependent
+
+.left-column2[
+.font150[
++ varying size of research communities
++ varying publication preferences
++ varying citation cultures and practices
+]]
+--
+
+.left-column2[
+.font150[
++ <i class="fas  fa-arrow-circle-right "></i> need for normalized and/or robust indicators, e.g.
+  - mean normalized citation score (MNCS)
+  - source normalized impact per paper (SNIP) 
+  - integrated impact indicator (I3)
+
+
+]]
+
+.right-column2[
+
+.font70[&lt;div style="position:absolute; bottom:50px;"&gt;
+
+
+Moed, H. F. (2010). Measuring contextual citation impact of scientific journals. Journal of Informetrics, 4(3), 265–277. https://doi.org/10.1016/j.joi.2010.01.002  
+&lt;br&gt;
+Waltman, L., van Eck, N. J., van Leeuwen, T. N., Visser, M. S., &amp; van Raan, A. F. J. (2011). Towards a new crown indicator: Some theoretical considerations. Journal of Informetrics, 5(1), 37–47. https://doi.org/10.1016/j.joi.2010.08.001
+&lt;br&gt;
+Waltman, L., &amp; van Eck, N. J. (2018). Field normalization of scientometric indicators. ArXiv:1801.09985. Retrieved from http://arxiv.org/abs/1801.09985
+
+&lt;/div&gt;]
+
+
+
+]
+
+???
+
+.font200[test nápovědy]
+
+---
+
+# What are the fields anyway?
+
+.left-column2[
+.font140[ 
++ the problem of the **granularity of classification**
+  - at what level should we aggregate by subject?
+  - Ruiz-Castillo &amp; Waltmann (2015) suggest thousands
+  - Klavans &amp; Boyack (2017) suggest tens of thousand
++ problematic **identification** of research subjects
+  - often-used journal-level classification unreliable  
+  Shu et al. (2019): 46% of articles do not match journal’s discipline
+  
++ <i class="fas  fa-arrow-circle-right "></i> **algorithmically constructed subject classes** on paper level can be helpful
+]
+
+]
+
+
+.right-column2[
+
+
+
+.font70[
+
+&lt;div style="position:absolute; bottom:50px;"&gt;
+
+Shu, F., Julien, C.-A., Zhang, L., Qiu, J., Zhang, J., &amp; Larivière, V. (2019). Comparing journal and paper level classifications of science. Journal of Informetrics, 13(1), 202–225. https://doi.org/10.1016/j.joi.2018.12.005
+&lt;br&gt;
+Klavans, R., &amp; Boyack, K. W. (2017). Research portfolio analysis and topic prominence. Journal of Informetrics, 11(4), 1158–1174. https://doi.org/10.1016/j.joi.2017.10.002
+&lt;br&gt;
+Ruiz-Castillo, J., &amp; Waltman, L. (2015). Field-normalized citation impact indicators using algorithmically constructed classification systems of science. Journal of Informetrics, 9(1), 102–117. https://doi.org/10.1016/j.joi.2014.11.010  
+
+&lt;/div&gt;
+
+]]
+
+
+
+---
+class: inverse
+
+
+.center[
+.font140[
+
+# Task
+
+extract topics from full-text articles 
+&lt;br&gt; score articles on their strength of association with particular topics 
+&lt;br&gt; infer the effects of topics on citations
+]]
+
+
+.center[
+.font140[
+# Challenge
+
+allow for an article to belong to more than one topic
+&lt;br&gt; avoid treating topics in articles as compositional data
+
+]]
+
+
+---
+class: center, middle, inverse
+
+# Data
+
+---
+
+# _Czech Sociological Review_
+
+.font120[ 
+.left-column2[
+
++ "core" journal of Czech sociology
++ the only Czech sociological periodical indexed in _Web of Science_
+
+-----
+
++ Corpus of selected research articles and essays published in _Czech Sociological Review_ from 1993 to 2016  
+    - Originally Czech, non-translated material only
+    - 522 documents and 3138072 tokens in total
+    - Parts-of-speech tags
+    - Published in [Lindat-CLARIN](https://lindat.mff.cuni.cz/en/) repository
+    - URI: http://hdl.handle.net/11372/LRT-2703
++ 499 items matched with citation records in _Web of Science_
++ number of authors
++ sex of lead authors
+
+]
+]
+
+.right-column2.center[
+
+&lt;img src="img/csr_cover.png" height="500"&gt;  
+
+
+]
+
+---
+
+# Distribution of citations
+
+.left-column2[
+&lt;br&gt;
+&lt;img src="img/citations_hist.png" height="500"&gt;  
+]
+
+
+
+.right-column2[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
++ low IF of the journal  
+(0.554 in 2018)
++ small number of highly cited papers 
++ large number of poorly cited papers
++ in such cases, Poisson distribution makes a better approximation
+
+.font70[
+&lt;div style="position:absolute; bottom:50px;"&gt;
+Pudovkin, A. I., &amp; Bornmann, L. (2018). Approximation of citation distributions to the Poisson distribution. COLLNET Journal of Scientometrics and Information Management, 12(1), 49–53. https://doi.org/10.1080/09737766.2017.1332605 
+&lt;/div&gt;]
+]
+
+
+---
+
+class: center, middle, inverse
+
+# Topic modeling
+
+
+
+---
+
+# TopSBM topic model
+
+
+
+.left-column2[
+
+.font140[
++ network approach to topic modeling
++ stochastic block modeling (SBM) of communities in a bipartite network of documents and words (types)
++ hierarchical (non-parametric), i.e. automatic selection of the number of topics
++ words in topics do not have mixed membership
+  - disadvantage compared to LDA and the like
+  - allows to treat topics as vocabulary lists
+]]
+
+
+.font70[
+&lt;div style="position:absolute; bottom:50px;"&gt;
+.left-column2[
+Gerlach, M., Peixoto, T. P., &amp; Altmann, E. G. (2018). A network approach to topic models. _Science Advances_, 4(7), eaaq1360. https://doi.org/10.1126/sciadv.aaq1360 
+]
+&lt;/div&gt;
+]
+
+.right-column2[
+.center[
+&lt;img src="img/topsbm.png" height="350"&gt; 
+Documents&amp;emsp;&amp;emsp;&amp;emsp;Word types
+]
+]
+
+
+
+
+---
+
+# Distribution of topics in documents
+
+.left-column2[
+&lt;img src="img/topics_hist_zero.png" height="500"&gt; 
+]
+
+---
+
+# Distribution of topics in documents
+
+.left-column2[
+&lt;img src="img/topics_hist_one.png" height="500"&gt; 
+]
+
+.right-column2[
+
++ Gerlach et al. (2018): topics made of words whose distributions accross documents approaches normal distributions are semantically less informative, aka stopwords
+
+]
+
+
+---
+
+# Correlation matrix of topics
+
+.left-column2[ 
+&lt;img src="img/topics_cors.png" height="560"&gt;
+]
+.right-column2[
++ topic scores can correlate
++ aid in interpretation
+]
+
+---
+
+# Correlation matrix of topics
+
+.left-column2[
+&lt;img src="img/topics_cors_low.png" height="560"&gt;¨¨
+]
+
+.right-column2[
+Maximum negative correlation **-0.73**  
+
+**Topic 25:** world thing science culture critique  
+**Topic 19:** number data information category factor  
+
+]
+
+---
+
+# Correlation matrix of topics
+
+.left-column2[
+&lt;img src="img/topics_cors_high.png" height="560"&gt;
+]
+
+.right-column2[
+Maximum positive correlation **\+0.81**  
+
+**Topic 25:** world thing science culture critique  
+**Topic 13:** sociology sociologist image order spirit  
+
+]
+
+---
+
+# Scoring of documents
+
+.pull-left[
+&lt;img src="img/example_score_1.png" height="300"&gt; 
+
+.font70[ 
+_In  the  Czech  Republic  inner  peripheries  are  usually  the peripheral  zones  of  metropolitan  areas  and  regional  centre  areas. In the mid-1990s population numbers stopped declining in some peripheries as a result of suburbanisation processes, but in other peripheries depopulation processes continued. This last category of inner peripheries can be described as the hard core of Czech peripheral regions and in the authors’ opinion they warrant the development of specific  regional policy measures, stressing the creation of new jobs, the improvement of public transport, greater accessibility of service centres, and co-operation among communities._
+]
+]
+
+.pull-right[
++ Word (token): `\(w\)`   
++ Document `\(i\)` (collection of words):  
+`\(D_{i} = \{w_{1i}, w_{2i},...,w_{ni}\}\)`  
++ Corpus (collection of documents):  
+`\(C = \{D_{1}, D_{2},...,D_{n}\}\)`  
++ Corpus complement to document `\(i\)`:  
+`\(C'_{i} =  \{D_{j} \in C: j\neq i\}\)` 
++ Topic words from topic `\(k\)`:  
+`\(T_{k} = \{w_{1k}, w_{2k},...,w_{nk}\}\)`  
++ Non-topic words (word complement to topic `\(j\)`):  
+`\(T'_{k} = \{ w \in C : w \notin T_{k} \}\)` 
+
+`$$TopicScore_{TkDi} = log\Biggl(\frac{\quad\frac{\vert T_{k} \cap D_{i} \vert }{\vert T'_{k} \cap D_{i} \vert }\quad}{\quad\frac{\vert T_{k} \cap C'_{i} \vert }{\vert T'_{k} \cap C'_{i} \vert }\quad} \Biggr)$$`
+
+
+
+]
+
+---
+
+class: center, middle, inverse
+
+# Citation counts modeling
+
+
+---
+
+# Controls
+
+&lt;img src="img/ctrl_plot.png" height="560"&gt; 
+
+---
+
+# Topics effects modeled separately
+
+&lt;img src="img/main_plot_separate.png" height="560"&gt; 
+
+---
+
+# Topic effects modeled simultaneously
+
+&lt;img src="img/main_plot_all.png" height="560"&gt; 
+
+---
+
+# Topic effects modeled with stepwise selection
+
+&lt;img src="img/main_plot.png" height="560"&gt; 
+
+---
+
+
+# Topics effects modeled separately
+
+&lt;img src="img/main_plot_separate_sorted.png" height="560"&gt; 
+
+---
+
+# Topic effects modeled simultaneously
+
+&lt;img src="img/main_plot_all_sorted.png" height="560"&gt; 
+
+---
+
+# Topic effects modeled with stepwise selection
+
+&lt;img src="img/main_plot_sorted.png" height="560"&gt; 
+
+---
+
+# Conclusions
+
+
+.font150[
+
+### Insights 
++ (some) topics can have effect on citations
++ (some) factors affecting citations can be moderated by topics
+  - gender of authors, collaboration
++ classification of papers into single topics may overestimate the latter's effects
+
+### Applications
++ journal IFs can be scored on their topical consistency
+  - the lesser the model fit, the higher the consistency
++ point estimates can be used as weights in evaluation of papers
+
+]
+
+
+
+---
+
+# The end
+
+##  Topics matter for citations - and tools exist to model their effects.
+
+
+.pull-left[
+&lt;br&gt;&lt;br&gt;
+.center[
+&lt;img src="img/qr.png" height="300"&gt;  
+]
+
+**Slides online:** https://hlageek.github.io/reports/issi2019
+]
+
+
+
+.pull-right[
+&lt;br&gt;
+### Radim Hladík  
+<i class="fas  fa-university "></i> National Institute of Informatics (Tokyo, JP)  
+<i class="fas  fa-university "></i> Institute of Philosophy of the Czech Academy of Sciences (Prague, CZ)
+##### Contact
+<i class="fas  fa-envelope "></i> &lt;a href="mailto:radim.hladik@fulbrightmail.org "&gt;radim.hladik@fulbrightmail.org&lt;/a&gt;  
+<i class="fab  fa-twitter "></i> &lt;a href="http://twitter.com/hlageek"&gt;@hlageek&lt;/a&gt;
+
+##### Acknowledgement
+<i class="fas  fa-money-check-alt "></i> Grant-in-Aid for JSPS Fellows no. 17F17769.
+
+]
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"slideNumberFormat": "%current%",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

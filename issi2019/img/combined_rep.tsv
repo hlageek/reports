@@ -1,0 +1,20 @@
+Variable	Coefficent	Sig
+(Intercept)	1.699 ( 0.377 )	***
+Age (Years since publication)	0.012 ( 0.008 )	 
+Collaborative authorship (single = 0, team = 1)	0.128 ( 0.124 )	 
+Lexical variety (types/tokens ratio)	-2.192 ( 0.907 )	*
+1st author sex (female = 0, male = 1)	0.05 ( 0.118 )	 
+topic_01 school phase transition origin dynamics	-0.069 ( 0.048 )	 
+topic_06 city resident municipality house housing	0.13 ( 0.044 )	**
+topic_07 question society case measure job	0.29 ( 0.219 )	 
+topic_08 election government democracy reform vote	0.092 ( 0.043 )	*
+topic_13 sociology sociologist image order spirit	0.171 ( 0.076 )	*
+topic_17 theory principle action law rule	-0.167 ( 0.081 )	*
+topic_19 number data information category factor	0.227 ( 0.089 )	*
+topic_22 network interaction community integration exclusion	0.152 ( 0.044 )	***
+topic_23 centre facility transportation countryside concentration	0.097 ( 0.059 )	.
+topic_24 position demand claim conflict public	0.104 ( 0.075 )	 
+topic_25 world thing science culture critique	-0.164 ( 0.098 )	.
+topic_26 sign communication intention media representation	-0.131 ( 0.055 )	*
+topic_30 majority member support program decision	-0.265 ( 0.1 )	**
+topic_33 sex old-age ageing senior doing	-0.089 ( 0.053 )	.
