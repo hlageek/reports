@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Gender of Sociological Authors from a Topic Modeling Perspective</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Radim Hladík" />
+    <link href="nmi2019_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="nmi2019_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="nmi2019_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="nmi2019_files/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+layout: true
+&lt;!-- Define general layout features --&gt;
+
+&lt;!-- Logos --&gt;
+&lt;div class="my-logo-flu"&gt;&lt;/div&gt;
+
+&lt;!-- Footer --&gt;
+&lt;div class="my-footer"&gt;&lt;span&gt;
+Radim Hladík
+&amp;emsp;&amp;emsp;&amp;emsp;
+@hlageek
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+NMI 2019, Praha, October 19, 2019
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://hlageek.github.io/reports/nmi2019/
+&lt;/span&gt;&lt;/div&gt;
+
+---
+
+class: remark-title-header
+
+&lt;!-- Title slide --&gt;
+
+# .left[_Gender of Sociological Authors&lt;br&gt;from a Topic Modeling Perspective_]
+
+&lt;!-- Left column --&gt;
+.pull-left.left[
+### New Media Inspiration 2019: DH&lt;br&gt;
+Faculty of Arts, Charles University, Prague, October 19, 2019
+
+&lt;!-- QR code --&gt;
+
+.left[
+&lt;img src="img/logo_flu_big.png" height="280"&gt;&amp;emsp;&amp;emsp;&amp;emsp;
+&lt;img src="img/czadh_logo.png" height="150"&gt;
+]
+**Slides:** https://hlageek.github.io/reports/nmi2019/]
+
+&lt;!-- Right column --&gt;
+
+.pull-right.left[ ### Radim Hladík
+<i class="fas  fa-university "></i> Institute of Philosophy&lt;br&gt; of the Czech Academy of Sciences&lt;br&gt;
+<i class="fas  fa-university "></i> Czech Association for Digital Humanities
+##### Contact
+<i class="fas  fa-envelope "></i> &lt;a href="mailto:radim.&lt;br&gt;hladik@fulbrightmail.org "&gt;radim.hladik@fulbrightmail.org&lt;/a&gt;&lt;br&gt;
+<i class="fab  fa-twitter "></i> &lt;a href="http://twitter.com/hlageek"&gt;@hlageek&lt;/a&gt;
+
+##### Acknowledgement
+<i class="fas  fa-money-check-alt "></i> Grant-in-Aid for JSPS Fellows no. 17F17769.
+]
+
+
+---
+
+# Outline of the presentation
+
+.font200[
+1. Motivation
+2. Data
+3. Topic modeling
+4. Infering the gender of authors from topics
+
+]
+
+---
+class: center, middle, inverse
+
+# Motivation
+
+
+---
+
+# Gender and sociology
+
+.left-column2[
+.font150[
++ _Signs of equality?_
+
+  - in the US sociology between 2003-2013 the share of women rose from 43% to 52% (Hur et al. 2017)
+  - cf. 32% in political science or 24% in economics
+  - no significant gender differences in the rate of collaboration in sociology (Hunter &amp; Leahey 2008)
+  - gender parity in citations (Lynn et al. 2019)
+]]
+
+.right-column2[
+
+.font70[&lt;div style="position:absolute; bottom:50px;"&gt;
+
+
+Gross, E. (1968). Plus Ca Change...? The Sexual Structure of Occupations over Time. Social Problems, 16(2), 198–208. https://doi.org/10.2307/800005 &lt;br&gt;
+Hunter, L., &amp; Leahey, E. (2008). Collaborative Research in Sociology: Trends and Contributing Factors. The American Sociologist, 39(4), 290–306. https://doi.org/10.1007/s12108-008-9042-1 &lt;br&gt;
+Hur, H., Andalib, M. A., Maurer, J. A., Hawley, J. D., &amp; Ghaffarzadegan, N. (2017). Recent trends in the U.S. Behavioral and Social Sciences Research (BSSR) workforce. PLOS ONE, 12(2), e0170887. https://doi.org/10.1371/journal.pone.0170887 &lt;br&gt;
+Lynn, F. B., Noonan, M. C., Sauder, M., &amp; Andersson, M. A. (2019). A Rare Case of Gender Parity in Academia. Social Forces. https://doi.org/10.1093/sf/soy126 &lt;br&gt;
+
+
+&lt;/div&gt;]
+]
+
+
+???
+
+.font200[test]
+
+---
+
+# Could there be "sex segregation" in sociology?
+
+.left-column2[
+.font130[
++ sociologists have long studied occupational "sex segregation" (Gross 1968)
++ sociology is a fragemented discipline
+  - longlasting methodological divisions (Schwemmer, C., &amp; Wieczorek, O. 2019)
+  - women work more frequently with qualitative methods (Grant et al. 1987)
+  - collaboration in sociology differs by specialty (Moody 2004)
+  - women in sociology specialize less and, consequently, suffer productivity penalty (Leahey 2006)
+  - people/thing orientation follows gendered patterns, even if not perfectly (Thelwall et al. 2019)
+]
+]
+
+
+.right-column2[
+
+
+
+.font70[
+
+&lt;div style="position:absolute; bottom:50px;"&gt;
+Grant, L., Ward, K. B., &amp; Rong, X. L. (1987). Is There An Association between Gender and Methods in Sociological Research? American Sociological Review, 52(6), 856. https://doi.org/10.2307/2095839 &lt;br&gt;
+Leahey, E. (2006). Gender Differences in Productivity: Research Specialization as a Missing Link. Gender &amp; Society, 20(6), 754–780. https://doi.org/10.1177/0891243206293030 &lt;br&gt;
+Moody, J. (2004). The Structure of a Social Science Collaboration Network: Disciplinary Cohesion from 1963 to 1999. American Sociological Review, 69(2), 213–238. https://doi.org/10.1177/000312240406900204 &lt;br&gt;
+Schwemmer, C., &amp; Wieczorek, O. (2019). The Methodological Divide of Sociology: Evidence from Two Decades of Journal Publications. Sociology, 0038038519853146. https://doi.org/10.1177/0038038519853146 &lt;br&gt;
+Thelwall, M., Bailey, C., Tobin, C., &amp; Bradshaw, N.-A. (2019). Gender differences in research areas, methods and topics: Can people and thing orientations explain the results? Journal of Informetrics, 13(1), 149–169. https://doi.org/10.1016/j.joi.2018.12.002
+
+
+&lt;/div&gt;
+
+]]
+
+
+
+---
+class: center, middle, inverse
+
+# Data
+
+---
+
+# _Czech Sociological Review_
+
+.font120[
+.left-column2[
+
++ "core" journal of Czech sociology
++ the only Czech sociological periodical indexed in _Web of Science_
+
+-----
+
++ Corpus of selected research articles and essays published in _Czech Sociological Review_ from 1993 to 2016
+    - Originally Czech, non-translated material only
+    - 522 documents and 3138072 tokens in total
+    - Parts-of-speech tags
+    - Published in [Lindat-CLARIN](https://lindat.mff.cuni.cz/en/) repository
+    - URI: http://hdl.handle.net/11372/LRT-2703
++ single vs. team authorship
++ gender of lead authors (lanaguage rules + manual correction)
++ lexical richness (Yule's K - text length independent measure of repetitivness)
+
+]
+]
+
+.right-column2.center[
+
+&lt;img src="img/csr_cover.png" height="500"&gt;
+
+
+]
+
+---
+
+# Gender of first authors
+
+.left-column2[
+&lt;br&gt;
+&lt;img src="img/gender_props.png" height="400"&gt;
+]
+
+
+
+.right-column2[
+
+&lt;br&gt;
++ proportion of women researchers in Czech social sciencs in 2015: **43**% 
++ in _Czech Sociological Review_:
+&lt;br&gt;
+
+|1st author | No. of articles| Percentage|
+|:-----------|--------------:|----------:|
+|woman         | 165     |        31.61|
+|man         | 357        |      68.39|
+
+.font70[
+&lt;div style="position:absolute; bottom:50px;"&gt;
+
+&lt;/div&gt;]
+]
+
+
+---
+
+class: center, middle, inverse
+
+# Topic modeling
+
+
+
+---
+
+# Why not LDA?
+
+.left-column2[
+.font130[
++ LDA (Blei et al. 2003) is good for descriptive purposes and suitable for machine learning, but not for inference
++ LDA topics are mixtures (compositional data)
+  - perfect multicollinearity
++ correlated topic models (CTMs) (Blei &amp; Lafferty 2007)
+  - perfect multicollinearity
+  - allow for topics to correlate
++ structural topic models (STMs) (Roberts et al. 2014)
+  - perfect multicollinearity
+  - correlate with metadata
+      - good for description
+      - cart before the horse in inference
+]
+
+]
+
+
+.right-column2[
+
+
+
+.font70[
+
+&lt;div style="position:absolute; bottom:50px;"&gt;
+
+Blei, D. M., Ng, A. Y., &amp; Jordan, M. I. (2003). Latent Dirichlet Allocation. Journal of Machine Learning Research, 3, 993–1022. &lt;br&gt;
+Blei, D. M., &amp; Lafferty, J. D. (2007). A correlated topic model of Science. The Annals of Applied Statistics, 1(1), 17–35. https://doi.org/10.1214/07-AOAS114 &lt;br&gt;
+Roberts, M. E., Stewart, B. M., Tingley, D., Lucas, C., Leder-Luis, J., Gadarian, S. K., … Rand, D. G. (2014). Structural Topic Models for Open-Ended Survey Responses. American Journal of Political Science, 58(4), 1064–1082. https://doi.org/10.1111/ajps.12103
+
+
+&lt;/div&gt;
+
+]]
+
+
+---
+
+# TopSBM topic model
+
+
+
+.left-column2[
+
+.font140[
++ Gerlach et al. 2018
++ network approach to topic modeling
++ stochastic block modeling (SBM) of communities in a bipartite network of documents and words (types)
++ hierarchical, non-parametric (no hyperparameter for the number of topics)
++ words in topics do not have mixed membership
+  - disadvantage compared to LDA and the like
+  - allows to treat topics as vocabulary lists
+]]
+
+
+.font70[
+&lt;div style="position:absolute; bottom:50px;"&gt;
+.left-column2[
+Gerlach, M., Peixoto, T. P., &amp; Altmann, E. G. (2018). A network approach to topic models. _Science Advances_, 4(7), eaaq1360. https://doi.org/10.1126/sciadv.aaq1360 
+
+]
+&lt;/div&gt;
+]
+
+.right-column2[
+.center[
+&lt;img src="img/topsbm.png" height="350"&gt;
+Documents&amp;emsp;&amp;emsp;&amp;emsp;Word types
+]
+]
+
+
+
+
+---
+
+# Distribution of topic words in documents
+
+.left-column2[
+&lt;img src="img/topics_hist_zero.png" height="500"&gt;
+]
+
+.right-column2[
++ in most documents, topic words are scarce
++ only in a small number of documents are topic words highly frequent
++ bins of 20
+]
+
+---
+
+# Distribution of topic words in documents
+
+.left-column2[
+&lt;img src="img/topics_hist_one.png" height="500"&gt;
+]
+
+.right-column2[
+
++ Gerlach et al. (2018): topics made of words whose distributions accross documents approaches normal distributions are semantically less informative, aka stopwords
+
+]
+
+---
+
+# Scoring of documents
+
+.pull-left[
+&lt;img src="img/example_score_1.png" height="300"&gt;
+
+.font70[
+
+_In  the  Czech  Republic  inner  peripheries  are  usually  the peripheral  zones  of  metropolitan  areas  and  regional  centre  areas. In the mid-1990s population numbers stopped declining in some peripheries as a result of suburbanisation processes, but in other peripheries depopulation processes continued. This last category of inner peripheries can be described as the hard core of Czech peripheral regions and in the authors’ opinion they warrant the development of specific  regional policy measures, stressing the creation of new jobs, the improvement of public transport, greater accessibility of service centres, and co-operation among communities._
+]
+]
+
+.pull-right[
+
+.font80[
+To avoid treating topics as document mixtures (LDA-style), we measure the  strength of association between topics and documents in the corpus with bootstrapped "keyness" statistic (log odds ratio).
+]
++ Word (token): `\(w\)`
++ Document `\(i\)` (collection of words):
+`\(D_{i} = \{w_{1i}, w_{2i},...,w_{ni}\}\)`
++ Corpus (collection of documents):
+`\(C = \{D_{1}, D_{2},...,D_{n}\}\)`
++ Corpus complement to document `\(i\)`:
+`\(C'_{i} =  \{D_{j} \in C: j\neq i\}\)`
++ Topic words from topic `\(k\)`:  
+`\(T_{k} = \{w_{1k}, w_{2k},...,w_{nk}\}\)`
++ Non-topic words (word complement to topic `\(k\)`):
+`\(T'_{k} = \{ w \in C : w \notin T_{k} \}\)`
+`$$TopicScore_{TkDi} = log\Biggl(\frac{\quad\frac{\vert T_{k} \cap D_{i} \vert }{\vert T'_{k} \cap D_{i} \vert }\quad}{\quad\frac{\vert T_{k} \cap C'_{i} \vert }{\vert T'_{k} \cap C'_{i} \vert }\quad} \Biggr)$$`
+
+
+]
+
+---
+
+# Correlation matrix of topics
+
+.left-column2[
+&lt;img src="img/topics_cors.png" height="540"&gt;
+]
+.right-column2[
++ topic scores can correlate
++ aid in interpretation
+]
+
+---
+
+# Correlation matrix of topics
+
+.left-column2[
+&lt;img src="img/topics_cors_low.png" height="540"&gt;¨¨
+]
+
+.right-column2[
+Maximum negative correlation **-0.73**
+&lt;br&gt;
+**Topic 25:** world thing science culture critique
+&lt;br&gt;
+**Topic 19:** number data information category factor
+
+]
+
+---
+
+# Correlation matrix of topics
+
+.left-column2[
+&lt;img src="img/topics_cors_high.png" height="540"&gt;
+]
+
+.right-column2[
+Maximum positive correlation **\+0.81**
+&lt;br&gt;
+**Topic 25:** world thing science culture critique
+&lt;br&gt;
+**Topic 13:** sociology sociologist image order spirit
+
+]
+
+
+---
+
+class: center, middle, inverse
+
+# Infering the gender of authors from topics
+
+
+---
+
+# Topic scores by gender
+
+&lt;img src="img/topics_scores_sex.png" height="540" width="1200"&gt;
+
+---
+
+# Gender of 1st authors: logistic regression models
+
+&lt;img src="img/gender_all_models.png" height="560" width="1000"&gt;
+
+---
+
+# Gender of 1st authors: logistic regression models
+
+.left-column2[
+&lt;img src="img/gender_all_models_1.png" height="520"&gt;
+]
+
+.right-column2[
+
+**Consistent effects:**
+
++ Female
+.red[
+- Topic 03: family woman child man feminization  
+- Topic 29: practice interview event style day  
+- Topic 33: sex old-age ageing senior doing
+]
+
++ Male
+.red[
+- Topic 13: sociology sociologist image order spirit
+]
+
+]
+
+---
+
+# Gender of 1st authors: logistic regression models
+
+.left-column2[
+&lt;img src="img/gender_all_models_2.png" height="520"&gt;
+]
+
+.right-column2[
+
+**Considerable effects:**
+
++ Female
+.font90[
+.green[
+- Lexical richness (Yule's K)
+- Topic 05: level attitude status orientation development    
+- Topic 18: affect danger threat violence occurrence        
+- Topic 12: conclusion method comparison answer remark sample
+- Topic 10: parent reproduction mother father engagement   
+]
+]
+
++ Male
+.font90[
+.green[
+- Topic 04: help household income cost provision           
+]
+]
+
+]
+
+---
+
+
+# Models' statistics
+
+.pull-left[
+.font150[
++ Pseudo-R&lt;sup&gt;2&lt;/sup&gt;
+  - Controls only - 0.01
+  - Topics only - 0.28
+  - All variables - 0.29
+  - Stepwise-selected variables - 0.27
+]
+]
+
+
+
+.pull-right[
+.font150[
++ AIC
+  - Controls only - 650
+  - Topics only - 537
+  - All variables - 539
+  - Stepwise-selected variables - 504
+]
+]
+
+
+|Single topic variable                 | Pseudo-R&lt;sup&gt;2&lt;/sup&gt;|     AIC|
+|:------------------------------------------------------|---------:|-------:|
+|Topic 03: family woman child man feminization          |     0.156| 559.713|
+|Topic 10: parent reproduction mother father engagement |     0.095| 599.259|
+|Topic 28: care partner discourse couple coexistence    |     0.088| 604.158|
+|Topic 33: sex old-age ageing senior doing              |     0.084| 606.461|
+|Topic 29: practice interview event style day           |     0.069| 616.578|
+
+---
+
+# Conclusions
+
+
+.font180[
+
++ the effect of topics appears stronger when they are considered separately
++ topics are more relevant to women than men
++ men tend to control the discourse about the sociological discipline 
++ women tend to control the discourse about gender
++ when considering the separate effects of topics, the evidence supports relegation of women to the topics of care (people orientation)
+
+]
+
+
+
+---
+
+# The end
+
+.font90[We presented a method for **infering the effect of topics** in the corpus of sociological articles on a binary outcome variable, the **gender of first authors**. Unlike zero-sum classificatory approaches (manual or machine-based), the **algorithmically discovered topics** measured on a continuous scale suggest that **segregation**in sociological specialties is discernible only in a **minority of topics**. Nevertheless, there are also indicies that **some topics tend to be gender specific** and that **topics matter more for women than men** in sociology.
+]
+
+.pull-left[
+.center[&lt;br&gt;
+&lt;img src="img/logo_flu_big.png" height="280"&gt;&amp;emsp;&amp;emsp;&amp;emsp;
+&lt;img src="img/czadh_logo.png" height="150"&gt;]
+&lt;br&gt;
+**Slides online:** https://hlageek.github.io/reports/nmi2019/
+]
+
+
+
+.pull-right[
+
+### Radim Hladík
+<i class="fas  fa-university "></i> Institute of Philosophy&lt;br&gt; of the Czech Academy of Sciences&lt;br&gt;
+<i class="fas  fa-university "></i> Czech Association for Digital Humanities
+##### Contact
+<i class="fas  fa-envelope "></i> &lt;a href="mailto:radim.&lt;br&gt;hladik@fulbrightmail.org "&gt;radim.hladik@fulbrightmail.org&lt;/a&gt;&lt;br&gt;
+<i class="fab  fa-twitter "></i> &lt;a href="http://twitter.com/hlageek"&gt;@hlageek&lt;/a&gt;
+
+##### Acknowledgement
+<i class="fas  fa-money-check-alt "></i> Grant-in-Aid for JSPS Fellows no. 17F17769.
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"slideNumberFormat": "%current%/%total%",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
