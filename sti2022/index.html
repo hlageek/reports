@@ -420,9 +420,9 @@
 <li>mean topic vectors for disciplines from the “training” subset</li>
 </ul></li>
 </ul></li>
-<li>Kullback–Leibler divergence
+<li>assign the least surprising discipline to each document
 <ul>
-<li>for each document in the “test” subset, assign the discipline with the least surprising reference topic vector</li>
+<li>for each document in the “test” subset, assign the discipline with the smallest Kullback–Leibler divergence from the reference topic vector</li>
 </ul></li>
 </ul>
 </div>
@@ -442,15 +442,81 @@
 </div>
 </div>
 </div>
+<p>accuracy = 47%</p>
 </section>
-<section id="nesting-disciplines" class="slide level2">
-<h2>Nesting disciplines</h2>
+<section id="nested-disciplinary-nomenclature" class="slide level2">
+<h2>Nested disciplinary nomenclature</h2>
+<div style="font-size: 85%">
+<ul>
+<li>Conseil National des Universités
+<ul>
+<li>advisory and administrative body for oversight of researchers’ careers</li>
+<li>organized around 81 disciplinary sections in 11 official groups plus medical and pharmaceutical researchers</li>
+</ul></li>
+<li>11 CNS sections have an exact match in the theses dataset (<span class="math inline">\(n=28986\)</span>)
+<ul>
+<li>the 11 sections come from 6 groups</li>
+</ul></li>
+<li>classification improves as we move upward in the disciplinary hiearchy
+<ul>
+<li>86% accuracy at sections level, 91% accuracy at groups level</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="nested-disciplines" class="slide level2">
+<h2>Nested disciplines</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="sti2022_files/figure-revealjs/unnamed-chunk-4-1.png" style="height:100.0%" width="1248"></p>
 </figure>
+</div>
+</div>
+</div>
+</section>
+<section id="disciplinary-groups" class="slide level2">
+<h2>Disciplinary groups</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div style="font-size: 60%">
+<ul>
+<li>I Group (Droit, économie, gestion)
+<ul>
+<li>science politique, histoire du droit et des institutions, droit public</li>
+</ul></li>
+<li>II Group (Droit, économie, gestion)
+<ul>
+<li>sciences de gestion</li>
+</ul></li>
+<li>IV Group (Lettres et sciences humaines)
+<ul>
+<li>philosophie</li>
+</ul></li>
+<li>V Group (Sciences)
+<ul>
+<li>informatique</li>
+</ul></li>
+<li>X Group (Sciences)
+<ul>
+<li>physiologie, neurosciences, biologie des organismes, biologie cellulaire</li>
+</ul></li>
+<li>XI Group (Lettres et sciences humaines)
+<ul>
+<li>sciences de l’information et de la communication</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="sti2022_files/figure-revealjs/unnamed-chunk-5-1.png" style="height:100.0%" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 </div>
 </div>
