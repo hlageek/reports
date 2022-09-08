@@ -7,7 +7,7 @@
 <link href="sti2022_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="sti2022_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="sti2022_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.38">
+  <meta name="generator" content="quarto-1.0.36">
 
   <title>sti2022</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,6 +22,25 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
   </style>
   <link rel="stylesheet" href="sti2022_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="sti2022_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -328,11 +347,11 @@
 <!-- ::: {.absolute bottom="200" left="0"} -->
 <!-- <img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/AdBKYV4stzdmwLf/rql_logo.png"/> -->
 <!-- ::: -->
-<div class="absolute" style="left: 0px; bottom: 100px; ">
+<div class="absolute" style="left: 0px; bottom: 130px; ">
 <p><a href="https://www.radimhladik.net/">Radim Hladík</a><span style="font-size: 70%"><sup>1,2</sup></span><br>
 <a href="https://www.sciencespo.fr/osc/fr/content/yann-renisio.html">Yann Renisio</a><span style="font-size: 70%"><sup>3</sup></span></p>
 </div>
-<div class="absolute" style="font-size: 50%;left: 0px; bottom: 0px; ">
+<div class="absolute" style="font-size: 50%;left: 0px; bottom: 20px; ">
 <p><sup>1</sup> Centre for Science, Technology, and Society Studies (CSTSS) @ IP Czech Academy of Sciences<br>
 <sup>2</sup> visiting scholar at Centre Georg Simmel @ EHESS<br>
 <sup>3</sup> Centre for Research on social InequalitieS (CRIS) @ CNRS/Sciences-Po</p>
@@ -390,11 +409,11 @@
 <li>abstracts (+ title, keywords) of ~285k of French doctoral theses and their disciplinary labels</li>
 <li>preprocessing
 <ul>
-<li>lemmatization (UDPipe)</li>
+<li>lemmatization with UDPipe <span style="font-size: 70%"><span class="citation" data-cites="Straka2017">(<a href="#/ref-Straka2017" role="doc-biblioref" onclick="return false;">Straka and Straková 2017</a>)</span></span></li>
 <li>removal of stopwords and non-alphabetical characters</li>
 <li>compounding frequent bi-grams and tri-grams</li>
 </ul></li>
-<li>topic modeling with TopSBM
+<li>topic modeling with TopSBM <span style="font-size: 70%"><span class="citation" data-cites="Gerlach2018">(<a href="#/ref-Gerlach2018" role="doc-biblioref" onclick="return false;">Gerlach, Peixoto, and Altmann 2018</a>)</span></span>
 <ul>
 <li>7 levels of topic hierarchy</li>
 <li>2043 topics at level 1 (most nuanced)</li>
@@ -438,12 +457,14 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="sti2022_files/figure-revealjs/unnamed-chunk-3-1.png" style="height:100.0%" width="1248"></p>
+<p><img data-src="sti2022_files/figure-revealjs/unnamed-chunk-3-1.png" style="height:100.0%" width="1056"></p>
 </figure>
 </div>
 </div>
 </div>
+<div class="absolute" style="font-size: 50%;left: 0px; bottom: 20px; ">
 <p>accuracy = 47%</p>
+</div>
 </section>
 <section id="nested-disciplinary-nomenclature" class="slide level2">
 <h2>Nested disciplinary nomenclature</h2>
@@ -471,7 +492,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="sti2022_files/figure-revealjs/unnamed-chunk-4-1.png" style="height:100.0%" width="1248"></p>
+<p><img data-src="sti2022_files/figure-revealjs/unnamed-chunk-4-1.png" style="height:100.0%" width="1056"></p>
 </figure>
 </div>
 </div>
@@ -548,12 +569,22 @@
 </ul></li>
 </ul>
 </section>
-<section id="acknowledgements" class="slide level2">
-<h2>Acknowledgements</h2>
+<section id="section" class="slide level2 smaller scrollable">
+<h2></h2>
+<h3 id="acknowledgements">Acknowledgements</h3>
 <p><img data-src="https://opvvv.msmt.cz/media/msmt/uploads/OP_VVV/Pravidla_pro_publicitu/logolinky/JVS2_opraveny_aj/logolink_OP_VVV_hor_barva_eng.jpg"></p>
+<h3 id="references">References</h3>
 <p><img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Gerlach2018" class="csl-entry" role="doc-biblioentry">
+Gerlach, Martin, Tiago P. Peixoto, and Eduardo G. Altmann. 2018. <span>“A Network Approach to Topic Models.”</span> <em>Science Advances</em> 4(7):eaaq1360. doi: <a href="https://doi.org/10.1126/sciadv.aaq1360">10.1126/sciadv.aaq1360</a>.
+</div>
+<div id="ref-Straka2017" class="csl-entry" role="doc-biblioentry">
+Straka, Milan, and Jana Straková. 2017. <span>“Tokenizing, <span>POS Tagging</span>, <span>Lemmatizing</span> and <span>Parsing UD</span> 2.0 with <span>UDPipe</span>.”</span> Pp. 88–99 in <em>Proceedings of the <span>CoNLL</span> 2017 <span>Shared Task</span>: <span>Multilingual Parsing</span> from <span>Raw Text</span> to <span>Universal Dependencies</span></em>. <span>Vancouver, Canada</span>: <span>Association for Computational Linguistics</span>.
+</div>
 </div>
 </section>
     </div>
