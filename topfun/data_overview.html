@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Overview of the data on French, Czech, and EU science funding agencies</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="data_overview_files/libs/clipboard/clipboard.min.js"></script>
+<script src="data_overview_files/libs/quarto-html/quarto.js"></script>
+<script src="data_overview_files/libs/quarto-html/popper.min.js"></script>
+<script src="data_overview_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="data_overview_files/libs/quarto-html/anchor.min.js"></script>
+<link href="data_overview_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="data_overview_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="data_overview_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="data_overview_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="data_overview_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#combined-dataset" id="toc-combined-dataset" class="nav-link active" data-scroll-target="#combined-dataset">Combined dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-by-countries-and-type-of-competition" id="toc-data-by-countries-and-type-of-competition" class="nav-link" data-scroll-target="#data-by-countries-and-type-of-competition">Data by countries and type of competition</a></li>
+  </ul></li>
+  <li><a href="#topic-models" id="toc-topic-models" class="nav-link" data-scroll-target="#topic-models">Topic models</a></li>
+  <li><a href="#topic-distributions" id="toc-topic-distributions" class="nav-link" data-scroll-target="#topic-distributions">Topic distributions</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Overview of the data on French, Czech, and EU science funding agencies</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="combined-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="combined-dataset">Combined dataset</h2>
+<div class="cell">
+
+</div>
+<p>Number of combined observations: 9514</p>
+<p>Variables: country, code, title, abstract, year, type, amount, duration</p>
+<section id="data-by-countries-and-type-of-competition" class="level3">
+<h3 class="anchored" data-anchor-id="data-by-countries-and-type-of-competition">Data by countries and type of competition</h3>
+<p>Split by country.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">cz</td>
+<td style="text-align: right;">3481</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eu</td>
+<td style="text-align: right;">2798</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fr</td>
+<td style="text-align: right;">3235</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Split by country and type of competition.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: left;">country</th>
+<th style="text-align: left;">type</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">cz</td>
+<td style="text-align: left;">junior</td>
+<td style="text-align: right;">854</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cz</td>
+<td style="text-align: left;">senior</td>
+<td style="text-align: right;">2627</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eu</td>
+<td style="text-align: left;">junior</td>
+<td style="text-align: right;">1702</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eu</td>
+<td style="text-align: left;">senior</td>
+<td style="text-align: right;">1096</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fr</td>
+<td style="text-align: left;">junior</td>
+<td style="text-align: right;">855</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fr</td>
+<td style="text-align: left;">senior</td>
+<td style="text-align: right;">2380</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Number of projects in each year by country and competition type.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Amount of funding awarded in each year by country and competition type. For the Czech case, 1 EUR = 25 CZK conversion was used.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Mean amount of funding per project awarded in each year by country and competition type.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Mean amount of funding per one year of project duration awarded in each year by country and competition type.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="topic-models" class="level2">
+<h2 class="anchored" data-anchor-id="topic-models">Topic models</h2>
+<p>Top 5 words per topic.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">CSF topics.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">ERC topics.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">ANR topics.</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/csf_topic_plot-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/erc_topic_plot-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/anr_topic_plot-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="topic-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="topic-distributions">Topic distributions</h2>
+<p>The following graphs show histograms of topic values across documents. Heavy-tailed topics tend to be distinctive, whereas near-normally distributed topics tend to be uniformative.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">CSF topics.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">ERC topics.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">ANR topics.</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/csf_topic_distr_plot-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/erc_topic_distr_plot-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="data_overview_files/figure-html/anr_topic_distr_plot-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
