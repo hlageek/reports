@@ -1,0 +1,220 @@
+---
+format:
+  revealjs: 
+    chalkboard: 
+      buttons: false
+    logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
+    footer: ""
+    progress: true
+    css: https://owncloud.cesnet.cz/remote.php/dav/public-files/ANrDfSPE23G89sE/quarto_logo.css
+bibliography: "https://owncloud.cesnet.cz/remote.php/dav/public-files/2LbStb1uwfw8STo/My_Library.bib"
+csl: https://www.zotero.org/styles/american-journal-of-sociology
+reference-location: margin
+citation-location: margin
+---
+## Výzkum výzkumu, <br>věda o vědě <br>a metavěda
+
+<br/>
+Přednáška v kurzu *Teorie humanitních věd 1*  
+
+- Univerzita Palackého v Olomouci
+- dne 26. října 2022
+
+::: {.absolute bottom="0" left="0"}
+[Radim Hladík](https://www.radimhladik.net/), [Filosofický ústav AVČR](https://www.flu.cas.cz)
+
+[hladik@flu.cas.cz](mailto:hladik@flu.cas.cz)
+:::
+
+
+## Co je věda?
+
+:::: {.columns}
+
+::: {.column width="30%"}
+<br>
+:::
+::: {.column width="35%"}
+![](https://upload.wikimedia.org/wikipedia/commons/1/17/1895-Dictionary-Phrenolog.png){width="300"}
+:::
+::: {.column width="35%"}
+![](https://www.thelancet.com/cms/attachment/98d4cde3-93f3-4191-be30-937ededf8ce7/gr1.jpg){width="300"}
+:::
+
+::::
+
+## Co je věda? Praktické dopady
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](https://www.reuters.com/resizer/59jusvtBh_sLE4SEJpNHTzTCEZI=/1200x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/PVCLBPTKKJJGPJLPKT5BMBUGNA.jpg){width="500"}
+:::
+::: {.column width="50%"}
+![](https://imageio.forbes.com/specials-images/imageserve/612ac6820e80ee7f88b60203/Ivermectin-Drug-For-COVID/960x0.jpg){width="500"}
+:::
+
+::::
+
+## Ohraničovací práce 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- sociologický  přístup k  filosofickému problému demarkace
+- věda vs. náboženství
+- věda vs. inženýrství
+
+
+:::
+::: {.column width="50%"}
+![](https://www.constructioncost.co/images/img/build-stable-boundary-walls.jpg){width="500"}
+:::
+
+::::
+
+> Even as sociologists and philosophers argue over the uniqueness of science among intellectual activities, demarcation is routinely accomplished in practical, everyday setting. [@Gieryn1983]
+
+## Science of science (věda o vědě)
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/eGWUgglgbYfW0ni/fortunato2019b.png){height="450"}
+
+
+>Science can be described as a complex, self-organizing, and evolving network of scholars, projects, papers, and ideas. [@Fortunato2018b] 
+
+## Věda o vědě - počátky
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](https://caseybergman.files.wordpress.com/2012/08/literature-growth1.jpg){height="600"}
+:::
+
+::: {.column width="40%"}
+- Derek J. de Solla Price: počátky scientometrie
+- exponenciální růst vědy
+- věda jako oblast nenormálních rozdělení
+
+>scientific papers do not rain from heaven [@Price1963]
+:::
+::::
+
+
+## Věda o vědě - motivace
+
+- nové zdroje (velkých) dat
+- nové možnosti analýzy díky výpočetním kapacitám a interdisciplinárnímu propojení přírodních, výpočetních a sociálněvědních badatelů
+- praktická motivace: efektivnější a rychlejší dosahování nových vědeckých poznatků
+
+## Data (příklady)
+
+::: {.absolute top="100" left="0"}
+![](https://vilniustech.lt/images/4110/205/10/10_1/clarivate%20analytics.jpg){width="500px"}
+:::
+
+::: {.absolute top="100" left="600"}
+![](https://sisaljournal.files.wordpress.com/2019/10/scopus.png){width="400px"}
+:::
+
+::: {.absolute top="400" left="100"}
+![](https://www.dimensions.ai/wp-content/themes/dimensions-2019/dist/images/dimensions-logo-400x80.png){width="400px"}
+:::
+
+::: {.absolute top="400" left="550"}
+![](https://authy.com/wp-content/uploads/new-microsoft-logo-SIZED-SQUARE-300x297.jpg){width="200px"}
+<br/>
+\> 260 000 000 dokumentů
+:::
+
+::: {.absolute top="500" left="0"}
+![](https://www.vyzkum.cz/storage/news/982045_sm.png){width="200px"}
+:::
+
+## Síťová perspektiva
+
+:::: {.columns}
+
+::: {.column width="65%"}
+![](https://storage.googleapis.com/plos-corpus-prod/10.1371/journal.pone.0004803/1/pone.0004803.g005.PNG_L?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=wombat-sa%40plos-prod.iam.gserviceaccount.com%2F20221026%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20221026T073617Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=47ccd87a83aa2268c5c7cfc13b1c3b3cc8290809595a17785e33e01f756ace59402d1430a45899c1b6a97b76d203bd149cc4986ea4e8eec1e6b989ad01a6e6596fb32d629689ed4c4550bc7f780e42545d0e3a70d93f8032a392c85af44cc2f3138d1ca5542d4a4abf960c60e89156ec6e6bc15cdbf56c7ea90572b605907ddc3930be97b005b128de48ace7618cccaef8c41797f4f2c27b2d6eb81b2952012c52e50736d5daaefda4cf5505a50cc40c2dd9377e640659b35bc4dce83bdee261c55c103738af80cd4822b4e37ded95b563b75f20acfd5c73d0993f7ce035562dd3a2eca325eac4daac5b2c05ac493902a7e2a62390305a3cf97c6244370028e5)
+
+:::
+
+::: {.column width="35%"}
+>nearly 1 billion user interactions recorded by the scholarly web portals of some of the most significant publishers, aggregators and institutional consortia [@Bollen2009]
+:::
+::::
+
+## Věda jako týmový sport
+
+
+:::: {.columns}
+
+::: {.column width="70%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/eGWUgglgbYfW0ni/Wuchty2007.png){height="400"}
+:::
+
+::: {.column width="30%"}
+>solo authors did produce the papers of singular distinction in science and engineering and social science in the 1950s, but the mantle of extraordinarily cited work has passed to teams by 2000 [@Wuchty2007]
+:::
+::::
+
+## Dopad velikosti týmů na vědu
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/eGWUgglgbYfW0ni/Wu2019_2.png){height="300"}
+:::
+
+::: {.column width="50%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/eGWUgglgbYfW0ni/Wu2019_1.png){height="300"}
+:::
+::::
+
+>Small teams disrupt science and technology by exploring and amplifying promising ideas from older and less-popular work. Large teams develop recent successes, by solving acknowledged problems and refining common designs.[@Wu2019]
+
+## Role "štěstí" ve vědě
+
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/eGWUgglgbYfW0ni/Janosov2020.png){height="400"}
+
+
+>any work in a career has an equal chance to be the highest impact work, following the so-called random-impact-rule. \[...\] The magnitude of a career impact is not random though: individual impact distributions differ broadly from each other. [@Janosov2020]
+
+##  Výběr témat a sociální identita
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/eGWUgglgbYfW0ni/Kozlowski2022.png){height="600"}
+:::
+
+::: {.column width="40%"}
+- A:  Social Sciences
+- B: Health
+
+>minoritized authors tend to publish in scientific disciplines and on research topics that reflect their gendered and racialized social identities [@Kozlowski2022]
+:::
+::::
+
+## Metavěda odpovídá na replikační krizi
+
+"Why Most Published Research Findings Are False" [@Ioannidis2005]
+
+- upozornil na nedostatky výzkumů zdůrazňujících $p$-hodnotu při nedostatečné statistickou sílou
+- doporučil mj. preregistrace výzkumu a spolupráci týmů
+- "pravdivé" výsledky jsou spíše ty, které se objevují opakovaně
+
+>Je zavádějící zdůrazňovat statisticky významná zjištění jakéhokoliv týmu. Co je důležité, je souhrn důkazů.
+
+
+
+## Otevřená věda
+
+![](https://cdn.muni.cz/media/3265918/os-mindmap.png)
+
+
+## Literatura 
+
