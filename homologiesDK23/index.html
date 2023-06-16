@@ -330,19 +330,103 @@
 
 <section id="science-as-field-and-science-as-knowledge-social-stratification-of-scientific-topics" class="slide level2">
 <h2><span style="font-size:80%;">Science as field and science as knowledge,</span> <br><span style="color:grey; font-size:80%;">Social stratification of scientific topics</span></h2>
-<div class="absolute" style="left: 0px; bottom: 0px; ">
-<div style="font-size:70%;">
+<div class="absolute" style="font-size: 70%;left: 0px; bottom: 130px; ">
+<p><a href="https://www.radimhladik.net/">Radim Hladík</a><sup>1</sup>, <a href="https://www.sciencespo.fr/osc/fr/content/yann-renisio.html">Yann Renisio</a><sup>2</sup></p>
+</div>
+<div class="absolute" style="font-size: 50%;left: 0px; bottom: 20px; ">
+<p><sup>1</sup> Centre for Science, Technology, and Society Studies (CSTSS) @ Institute of Philosophy, Czech Academy of Sciences<br> <a href="mailto:hladik@flu.cas.cz">hladik@flu.cas.cz</a>, <a href="https://twitter.com/hlageek">@hlageek</a>, <a href="https://scholar.social/@hlageek">@hlageek@scholar.social</a> <br> <sup>2</sup> Centre for Research on social InequalitieS (CRIS) @ CNRS/Sciences-Po<br> <a href="mailto:yann.renisio@sciencespo.fr">yann.renisio@sciencespo.fr</a></p>
+</div>
+</section>
+<section id="spaces-of-positions-and-position-takings" class="slide level2">
+<h2><span style="font-size:80%;">Spaces of positions and position-takings</span></h2>
+<div class="r-fit-text">
+<blockquote>
+<p>Aux différentes <strong>positions</strong> (qui, dans un univers aussi peu institutionnalisé que le champ littéraire ou artistique, ne se laissent appréhender qu’à travers les propriétés de leurs occupants) correspondent des <strong>prises de positions homologues</strong>, oeuvres littéraires ou artistiques évidemment, mais aussi actes et discours politiques, manifestes ou polémiques, etc., - ce qui impose de récuser l’alternative entre la lecture interne de l’oeuvre et l’explication par les conditions sociales de sa production ou de sa consommation.</p>
+</blockquote>
+<p>Pierre Bourdieu, “Le champ littéraire.” <em>Actes de la Recherche en Sciences Sociales</em>. 1991, 89: 3-46.</p>
+<blockquote>
+<p>I am well aware that knowledge in the form of a science can gain autonomy in relation to the groups who know and who produce this knowledge. But I am also aware that this autonomy is never absolute, it is always a relative autonomy. It can have a greater or lesser degree.</p>
+</blockquote>
+<p>Norbert Elias, “Theory of Science and History of Science.” <em>Economy and Society</em>, 1972, 1 (1–2): 117–33.</p>
 <ul>
-<li><a href="https://www.radimhladik.net/">Radim Hladík</a>, <a href="https://www.flu.cas.cz">Czech Academy of Sciences, Institute of Philosophy</a><br>
+<li>Can we observe homological patterns between scientific field and scientific knowledge?
 <ul>
-<li><a href="mailto:hladik@flu.cas.cz">hladik@flu.cas.cz</a>, <a href="https://twitter.com/hlageek">@hlageek</a>, <a href="https://scholar.social/@hlageek">@hlageek@scholar.social</a><br></li>
-</ul></li>
-<li><a href="https://www.sciencespo.fr/osc/fr/node/2329.html">Yann Renisio</a>, <a href="https://www.sciencespo.fr/osc/fr.html">SciencesPo/CNRS</a><br>
-<ul>
-<li><a href="mailto:yann.renisio@sciencespo.fr">yann.renisio@sciencespo.fr</a></li>
+<li>Are individuals similar to each other in the space of positions also similar to each other in the space of position-takings?</li>
 </ul></li>
 </ul>
 </div>
+</section>
+<section id="data" class="slide level2">
+<h2>Data</h2>
+<div class="r-fit-text">
+<ul>
+<li>R&amp;D Information System of the Czech Republic
+<ul>
+<li>mandated by the Act no. 130/2002 Coll. on the Support of Research and Development from Public Funds</li>
+</ul></li>
+<li>1038268 publications and 55603 grants (records extracted in 2022)</li>
+<li>118560 authors with unique IDs
+<ul>
+<li>25050 principal investigators and co-investigators</li>
+</ul></li>
+<li>topic model of English abstracts of 838428 publications
+<ul>
+<li>articles, books, book chapters, proceedings</li>
+<li>operationalization of scientific knowledge as “topic choices” manifest in the content of publications</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="topic-modeling" class="slide level2">
+<h2>Topic modeling</h2>
+<div class="columns">
+<div class="column r-fit-text">
+<ul>
+<li>dimensionality reduction technique for text data
+<ul>
+<li>terms are distributed across a limited number of topics</li>
+<li>LDA most popular implementation, many variants</li>
+<li>chosen method: TopSBM (Gerlach et al.&nbsp;2018), network approach to topic modeling</li>
+</ul></li>
+<li>according to DiMaggio et al.&nbsp;(2013), “topic modeling renders operational central ideas in the sociology of culture”
+<ul>
+<li>model estimation: relationality of meaning, polysemy</li>
+<li>topic mixtures: heteroglossia (multiplicity of voices)</li>
+<li>topics: interpretative “frames”</li>
+</ul></li>
+</ul>
+</div><div class="column">
+<p><img src="https://topsbm.github.io/triangles.png" height="150"><br> <img src="https://topsbm.github.io/bipartite.png" height="350"></p>
+<div style="position:absolute; bottom:20px; font-size: small;">
+<p>Gerlach, Martin, Tiago P. Peixoto, and Eduardo G. Altmann. 2018. “A Network Approach to Topic Models.” Science Advances 4 (7): eaaq1360. https://doi.org/10.1126/sciadv.aaq1360. <br></p>
+</div>
+</div>
+</div>
+</section>
+<section id="protocol" class="slide level2">
+<h2>Protocol</h2>
+<div class="r-fit-text">
+<ul>
+<li>Calculate prevalence of topics by discipline
+<ul>
+<li>from 838428 rows to 42 rows (FORD disciplines)</li>
+</ul></li>
+<li>Transpose the resulting matrix
+<ul>
+<li>1534 rows (topics), 42 columns (disciplines)</li>
+</ul></li>
+<li>Principal component analysis of topics in disciplinary space
+<ul>
+<li>transform topic mixtures</li>
+<li>retain 5 principal components (60% of variance)</li>
+<li>“from corpus to space” (Kropp and Larsen 2022)</li>
+</ul></li>
+<li>Calculate average topic portofolio of individual researchers
+<ul>
+<li>from 838428 rows to 111944 rows and 1534 columns</li>
+</ul></li>
+<li>Take a product of the matrix of individual topic portfolios (111944x1534) with the decomposed matrix of topics (1534x5)</li>
+</ul>
 </div>
 </section>
 <section id="principal-components-1-2---variables" class="slide level2 scrollable">
@@ -1241,6 +1325,23 @@ Akaike Inf. Crit.
 </tr>
 
 </tbody></table>
+</section>
+<section id="concluding-remarks" class="slide level2">
+<h2>Concluding remarks</h2>
+<ul>
+<li>endogeneity
+<ul>
+<li>is that a problem in this design?</li>
+<li>the size of data may be of help in this case</li>
+</ul></li>
+<li>language unites people/publications
+<ul>
+<li>distinctions may be hidden</li>
+<li>removal of “stop topics”</li>
+<li>transformation from within document probabilities to within corpus odds</li>
+</ul></li>
+<li>???</li>
+</ul>
 
 <img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
