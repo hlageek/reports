@@ -244,6 +244,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -326,8 +327,8 @@
     <div class="slides">
 
 
-<section id="coding-squared-exploring-reproducibility-in-qualitative-data-analysis-qda-through-research-software-development" class="slide level2">
-<h2>Coding Squared: Exploring reproducibility in qualitative data analysis (QDA) through research software development”</h2>
+<section id="coding2-exploring-reproducibility-in-qualitative-data-analysis-qda-through-research-software-development" class="slide level2">
+<h2>Coding<sup>2</sup>: Exploring reproducibility in qualitative data analysis (QDA) through research software development</h2>
 <div class="absolute" style="left: 700px; bottom: 200px; ">
 <p><img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/FeiL6U4pYaJYEsS/rql_logo.png"></p>
 </div>
@@ -336,7 +337,7 @@
 </div>
 <div class="absolute" style="font-size: 50%;left: 0px; bottom: 0px; ">
 <p><sup>*</sup> Czech Academy of Sciences, Institute of Philosophy<br>
-<a href=""><span class="citation" data-cites="hlageek">@hlageek</span><span class="citation" data-cites="sciences.social">@sciences.social</span></a></p>
+<a href="https://sciences.social/@hlageek"><span class="citation" data-cites="hlageek">@hlageek</span><span class="citation" data-cites="sciences.social">@sciences.social</span></a>, <a href="mailto:hladik@flu.cas.cz">hladik@flu.cas.cz</a></p>
 </div>
 <aside class="notes">
 <p>Team introduction.</p>
@@ -352,27 +353,98 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="volunteers" class="slide level2">
-<h2>Volunteers?</h2>
-
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Uncle_Sam_%28pointing_finger%29.jpg" class="r-stretch"></section>
-<section id="real-time-experiment" class="slide level2">
-<h2>Real-time experiment</h2>
-<ol type="1">
-<li>Navigate to <a href="https://requal.fsv.cuni.cz/app2">https://requal.fsv.cuni.cz/app2</a></li>
-<li>Login into <code>QI2023</code> project with the available user accounts <code>test01</code>, <code>test02</code>, <code>test03</code>, <code>test04</code>, <code>test05</code> (password same as user login)</li>
-<li>Annotate two documents with available codes</li>
-<li>Bonus: declare your field of study</li>
-</ol>
+<section id="acknowledgements" class="slide level2">
+<h2>Acknowledgements</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p>TNA Fellowship</p>
+<p><img data-src="https://clsinfra.io/wp-content/uploads/2021/09/CLS-INFRA_Stacked-Long-Logo-Rev-Col-1024x626.jpg" width="300"></p>
+</div><div class="column" style="width:25%;">
+<p>TCDH</p>
+<p><img data-src="https://tcdh.uni-trier.de/sites/default/files/styles/medium/public/2020-11/ChristofSch%C3%B6ch3.jpg"></p>
+<div class="fragment">
+<p><img data-src="https://tcdh.uni-trier.de/sites/default/files/styles/querformat_teaserbild/public/2024-03/LODinG%20KickOff.png?itok=cY1Iv9bT" width="300"></p>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="fragment">
+<p>Requal team</p>
+<div style="font-size: 50%;">
+<p><img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMjfxap5cnu6O7R--ggoL-VTxcNxI9NWvlt31P_Vfzsw&amp;s.png" height="100"></p>
+<p>Martin Hájek</p>
+<p><img data-src="https://www.soc.cas.cz/sites/default/files/styles/square_160_160/public/profilove-obrazky/pic_0.jpg" height="100"></p>
+<p>Michal Škvrňák</p>
+<p><img data-src="https://www.soc.cas.cz/sites/default/files/styles/square_160_160/public/profilove-obrazky/fotka_farova.jpg" height="100"></p>
+<p>Nina Fárová</p>
+</div>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="fragment">
+<div style="text-align: center;">
+<p><span class="emoji" data-emoji="coffee">☕</span></p>
+</div>
+<p><img data-src="https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/tcdh_coffee.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="about-me" class="slide level2">
+<h2>About me</h2>
+</section>
+<section id="qualitative-coding" class="slide level2">
+<h2>Qualitative coding</h2>
+<ul>
+<li>Tools
+<ul>
+<li>manual</li>
+<li>non-dedicated software (MS Word, MS Excel)</li>
+<li><strong>CAQDAS</strong> - Computer-assisted qualitative data analysis software</li>
+</ul></li>
+<li>Approaches
+<ul>
+<li>Codebook applied (e.g., content analysis)</li>
+<li>Codebook built from material (e.g., grounded theory)</li>
+</ul></li>
+<li>Material
+<ul>
+<li>documents (various types/media)
+<ul>
+<li>e.g., newspaper articles</li>
+</ul></li>
+<li>interview and focus group transcripts</li>
+<li>field notes</li>
+</ul></li>
+</ul>
+<div style="color: red;">
+<p><em>Coding is just one way to conduct qualitative research!</em></p>
+</div>
 </section>
 <section id="caqdas" class="slide level2">
 <h2>CAQDAS</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Proprietary</a></li><li><a href="#tabset-1-2">FLOSS</a></li><li><a href="#tabset-1-3">Wiki</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <ul>
-<li>dominated by proprietary solutions</li>
+<li>dominated by proprietary solutions
+<ul>
+<li>non-equitable access</li>
+<li>problem for teaching (licenses for students)</li>
+<li>difficulties in collaboration</li>
+</ul></li>
 </ul>
-<p><img data-src="https://www.pugh.co.uk/wp-content/uploads/2017/08/Atlas-ti-Logo-600x600.jpg" class="absolute" style="top: 150px; left: 0px; height: 80px; "> <img data-src="https://www.maxqda.com/wp/wp-content/themes/max/img/max22/logo-max22.svg" class="absolute" style="top: 150px; left: 200px; height: 60px; "> <img data-src="https://researcholic.files.wordpress.com/2015/04/nvivo_logo.jpg" class="absolute" style="top: 150px; left: 600px; height: 60px; "> <br></p>
-<iframe src="https://en.wikipedia.org/wiki/Computer-assisted_qualitative_data_analysis_software#Comparison_of_CAQDAS_software" height="60%" width="100%">
+<p><img data-src="https://www.pugh.co.uk/wp-content/uploads/2017/08/Atlas-ti-Logo-600x600.jpg" class="absolute" style="left: 0px; bottom: 100px; height: 80px; "> <img data-src="https://www.maxqda.com/wp/wp-content/themes/max/img/max22/logo-max22.svg" class="absolute" style="left: 200px; bottom: 100px; height: 60px; "> <img data-src="https://researcholic.files.wordpress.com/2015/04/nvivo_logo.jpg" class="absolute" style="left: 600px; bottom: 100px; height: 60px; "> <br></p>
+</div>
+<div id="tabset-1-2">
+<p><img data-src="https://github.com/ccbogel/QualCoder/raw/master/qualcoder.png" height="70"> <a href="https://qualcoder.wordpress.com/">QualCoder</a> - feature rich desktop software</p>
+<p><img data-src="https://www.taguette.org/imgs/taguette.png" height="70"> <a href="https://www.taguette.org">Taguette</a> - browser based basic and collaborative coding</p>
+<p><img data-src="https://github.com/ropenscilabs/qcoder/raw/master/images/hex/imgHex.png" height="70"> <a href="https://docs.ropensci.org/qcoder/">QCoder</a> - lightweight coding package</p>
+</div>
+<div id="tabset-1-3">
+<iframe src="https://en.wikipedia.org/wiki/Computer-assisted_qualitative_data_analysis_software#Comparison_of_CAQDAS_software" height="500px" width="100%">
 </iframe>
+</div>
+</div>
+</div>
 <aside class="notes">
 <p>Situation with CAQDAS.</p>
 <style type="text/css">
@@ -390,22 +462,7 @@
 <section id="inspirational-caqdas" class="slide level2">
 <h2>Inspirational CAQDAS</h2>
 <div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 6.3%;justify-content: center;">
-<p><img data-src="https://github.com/ccbogel/QualCoder/raw/master/qualcoder.png"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 93.8%;justify-content: center;">
-<p><a href="https://qualcoder.wordpress.com/">QualCoder</a> - feature rich software</p>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 6.3%;justify-content: center;">
-<p><img data-src="https://www.taguette.org/imgs/taguette.png"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 93.8%;justify-content: center;">
-<p><a href="https://www.taguette.org">Taguette</a> - browser based basic and collaborative coding</p>
-</div>
-</div>
+
 </div>
 <h3 id="r">R</h3>
 <div class="quarto-layout-panel">
@@ -428,9 +485,6 @@
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 6.3%;justify-content: center;">
 <p><img data-src="https://github.com/ropenscilabs/qcoder/raw/master/images/hex/imgHex.png"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 93.8%;justify-content: center;">
-<p><a href="https://docs.ropensci.org/qcoder/">QCoder</a> - lightweight coding package</p>
 </div>
 </div>
 </div>
@@ -616,7 +670,7 @@
 </div>
 <p><img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://github.com/RE-QDA/requal" class="uri">https://github.com/RE-QDA/requal</a></p>
+<p><a href="https://tcdh.uni-trier.de/">TCDH</a> Forschungskolloquium 2024-05-02</p>
 </div>
 </section>
     </div>

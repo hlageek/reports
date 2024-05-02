@@ -5,13 +5,15 @@ format:
       buttons: false
     reference-location: block 
     logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
-    footer: <https://github.com/RE-QDA/requal>
+    footer: <a href="https://tcdh.uni-trier.de/">TCDH</a> Forschungskolloquium 2024-05-02
     progress: true
+    scrollable: true
     embed-resources: false
+from: markdown+emoji
 output-file: index.html
 ---
 
-## Coding Squared: Exploring reproducibility in qualitative data analysis (QDA) through research software development"
+## Coding<sup>2</sup>: Exploring reproducibility in qualitative data analysis (QDA) through research software development
 
 ::: {.absolute bottom="200" left="700"}
 <img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/FeiL6U4pYaJYEsS/rql_logo.png"/>
@@ -23,34 +25,129 @@ output-file: index.html
 
 ::: {.absolute bottom="0" left="0" style="font-size: 50%;"}
 <sup>\*</sup> Czech Academy of Sciences, Institute of Philosophy  
-[@hlageek@sciences.social]()
+[@hlageek@sciences.social](https://sciences.social/@hlageek), [hladik@flu.cas.cz](mailto:hladik@flu.cas.cz)
 :::
 
 ::: {.notes}
 Team introduction.
 :::
 
-## Volunteers?
+## Acknowledgements
 
-![](https://upload.wikimedia.org/wikipedia/commons/f/f3/Uncle_Sam_%28pointing_finger%29.jpg)
+:::: {.columns}
 
-## Real-time experiment
+::: {.column width="25%"}
+TNA Fellowship 
 
-1. Navigate to [https://requal.fsv.cuni.cz/app2](https://requal.fsv.cuni.cz/app2) 
-2. Login into `QI2023` project with the available user accounts `test01`, `test02`, `test03`, `test04`, `test05` (password same as user login)
-3. Annotate two documents with available codes
-4. Bonus: declare your field of study
+![](https://clsinfra.io/wp-content/uploads/2021/09/CLS-INFRA_Stacked-Long-Logo-Rev-Col-1024x626.jpg){width="300px"}
+:::
+
+::: {.column width="25%"}
+TCDH
+
+![](https://tcdh.uni-trier.de/sites/default/files/styles/medium/public/2020-11/ChristofSch%C3%B6ch3.jpg)
+
+:::  {.fragment}
+![](https://tcdh.uni-trier.de/sites/default/files/styles/querformat_teaserbild/public/2024-03/LODinG%20KickOff.png?itok=cY1Iv9bT){width="300px"}
+:::
+
+:::
+
+::: {.column width="25%"}
+
+:::  {.fragment} 
+Requal team
+
+::: {style="font-size: 50%;"}
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMjfxap5cnu6O7R--ggoL-VTxcNxI9NWvlt31P_Vfzsw&s){height="100px"}
+
+Martin Hájek
+
+
+![](https://www.soc.cas.cz/sites/default/files/styles/square_160_160/public/profilove-obrazky/pic_0.jpg){height="100px"}
+
+Michal Škvrňák
+
+![](https://www.soc.cas.cz/sites/default/files/styles/square_160_160/public/profilove-obrazky/fotka_farova.jpg){height="100px"}
+
+Nina Fárová
+
+:::
+:::
+:::
+
+::: {.column width="25%"}
+
+:::  {.fragment}
+::: {style="text-align: center;"}
+:coffee: 
+:::
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/tcdh_coffee.png)
+:::
+
+:::
+
+::::
+
+
+## About me
+
+
+
+
+## Qualitative coding 
+
+
+- Tools
+  - manual
+  - non-dedicated software (MS Word, MS Excel)
+  - __CAQDAS__ - Computer-assisted qualitative data analysis software
+- Approaches
+  - Codebook applied (e.g., content analysis)
+  - Codebook built from material (e.g., grounded theory)
+- Material
+  - documents (various types/media)
+    - e.g., newspaper articles
+  - interview and focus group transcripts
+  - field notes
+
+<div style="color: red;">
+_Coding is just one way to conduct qualitative research!_
+</div>
 
 ## CAQDAS
 
-- dominated by proprietary solutions
+::: {.panel-tabset}
 
-![](https://www.pugh.co.uk/wp-content/uploads/2017/08/Atlas-ti-Logo-600x600.jpg){.absolute left="0" top="150" height="80"}
-![](https://www.maxqda.com/wp/wp-content/themes/max/img/max22/logo-max22.svg){.absolute left="200" top="150" height="60"}
-![](https://researcholic.files.wordpress.com/2015/04/nvivo_logo.jpg){.absolute left="600" top="150" height="60"}
+### Proprietary
+
+- dominated by proprietary solutions
+  - non-equitable access
+  - problem for teaching (licenses for students)
+  - difficulties in collaboration 
+
+![](https://www.pugh.co.uk/wp-content/uploads/2017/08/Atlas-ti-Logo-600x600.jpg){.absolute left="0" bottom="100" height="80"}
+![](https://www.maxqda.com/wp/wp-content/themes/max/img/max22/logo-max22.svg){.absolute left="200" bottom="100" height="60"}
+![](https://researcholic.files.wordpress.com/2015/04/nvivo_logo.jpg){.absolute left="600" bottom="100" height="60"}
 <br>
 
-<iframe src="https://en.wikipedia.org/wiki/Computer-assisted_qualitative_data_analysis_software#Comparison_of_CAQDAS_software" height=60% width=100%></iframe>
+### FLOSS {.scrollable}
+
+![](https://github.com/ccbogel/QualCoder/raw/master/qualcoder.png){height="70"}
+[QualCoder](https://qualcoder.wordpress.com/) - feature rich desktop software
+
+![](https://www.taguette.org/imgs/taguette.png){height="70"}
+[Taguette](https://www.taguette.org) - browser based basic and collaborative coding
+
+![](https://github.com/ropenscilabs/qcoder/raw/master/images/hex/imgHex.png
+){height="70"}
+[QCoder](https://docs.ropensci.org/qcoder/) - lightweight  coding package
+
+### Wiki
+
+<iframe src="https://en.wikipedia.org/wiki/Computer-assisted_qualitative_data_analysis_software#Comparison_of_CAQDAS_software" height="500px" width=100%></iframe>
+
+:::
 
 ::: {.notes}
 Situation with CAQDAS.
@@ -60,13 +157,7 @@ Situation with CAQDAS.
 ## Inspirational CAQDAS
 
 ::: {layout="[1, 15]"}
-![](https://github.com/ccbogel/QualCoder/raw/master/qualcoder.png){height="70"}
 
-[QualCoder](https://qualcoder.wordpress.com/) - feature rich software
-
-![](https://www.taguette.org/imgs/taguette.png)
-
-[Taguette](https://www.taguette.org) - browser based basic and collaborative coding
 :::
 
 ### R
@@ -82,7 +173,7 @@ Situation with CAQDAS.
 
 ![](https://github.com/ropenscilabs/qcoder/raw/master/images/hex/imgHex.png)
 
-[QCoder](https://docs.ropensci.org/qcoder/) - lightweight  coding package
+
 ::: 
 
 ::: {.notes}
