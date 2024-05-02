@@ -1,0 +1,219 @@
+---
+format:
+  revealjs: 
+    chalkboard: 
+      buttons: false
+    reference-location: block 
+    logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
+    footer: <https://github.com/RE-QDA/requal>
+    progress: true
+    embed-resources: false
+output-file: index.html
+---
+
+## Coding Squared: Exploring reproducibility in qualitative data analysis (QDA) through research software development"
+
+::: {.absolute bottom="200" left="700"}
+<img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/FeiL6U4pYaJYEsS/rql_logo.png"/>
+:::
+
+::: {.absolute bottom="100" left=""}
+[Radim Hladík](https://www.radimhladik.net/)<sup>\*</sup>  
+:::
+
+::: {.absolute bottom="0" left="0" style="font-size: 50%;"}
+<sup>\*</sup> Czech Academy of Sciences, Institute of Philosophy  
+[@hlageek@sciences.social]()
+:::
+
+::: {.notes}
+Team introduction.
+:::
+
+## Volunteers?
+
+![](https://upload.wikimedia.org/wikipedia/commons/f/f3/Uncle_Sam_%28pointing_finger%29.jpg)
+
+## Real-time experiment
+
+1. Navigate to [https://requal.fsv.cuni.cz/app2](https://requal.fsv.cuni.cz/app2) 
+2. Login into `QI2023` project with the available user accounts `test01`, `test02`, `test03`, `test04`, `test05` (password same as user login)
+3. Annotate two documents with available codes
+4. Bonus: declare your field of study
+
+## CAQDAS
+
+- dominated by proprietary solutions
+
+![](https://www.pugh.co.uk/wp-content/uploads/2017/08/Atlas-ti-Logo-600x600.jpg){.absolute left="0" top="150" height="80"}
+![](https://www.maxqda.com/wp/wp-content/themes/max/img/max22/logo-max22.svg){.absolute left="200" top="150" height="60"}
+![](https://researcholic.files.wordpress.com/2015/04/nvivo_logo.jpg){.absolute left="600" top="150" height="60"}
+<br>
+
+<iframe src="https://en.wikipedia.org/wiki/Computer-assisted_qualitative_data_analysis_software#Comparison_of_CAQDAS_software" height=60% width=100%></iframe>
+
+::: {.notes}
+Situation with CAQDAS.
+:::
+
+
+## Inspirational CAQDAS
+
+::: {layout="[1, 15]"}
+![](https://github.com/ccbogel/QualCoder/raw/master/qualcoder.png){height="70"}
+
+[QualCoder](https://qualcoder.wordpress.com/) - feature rich software
+
+![](https://www.taguette.org/imgs/taguette.png)
+
+[Taguette](https://www.taguette.org) - browser based basic and collaborative coding
+:::
+
+### R
+
+::: {layout="[1, 15]"}
+<br>
+
+[RQDA](https://rqda.r-forge.r-project.org/) - CAQDAS package for R (deprecated in 2021)
+
+![](https://r-packages.gitlab.io/rock/img/hex-logo.png)
+
+[ROCK](https://r-packages.gitlab.io/rock/) Reproducible Open Coding Kit geared towards quantitative ethnography
+
+![](https://github.com/ropenscilabs/qcoder/raw/master/images/hex/imgHex.png)
+
+[QCoder](https://docs.ropensci.org/qcoder/) - lightweight  coding package
+::: 
+
+::: {.notes}
+Situation with FOSS options.
+:::
+
+## Database schema RQDA
+  
+ ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/OylaHXDoes5Sc4Z/rqda_schema.png){height="600px"}
+
+::: {.notes}
+Compare databases
+:::
+
+## Database schema reQual
+  
+ ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/huONA6vwyTc8vyV/rql_schema.png){height="600px"}
+
+
+::: {.notes}
+Compare databases
+:::
+
+## R advantages?
+
+- We do not speak other languages
+- As R is commonly used in the social sciences, having an application in R has the potential to bring qualitative and quantitative researchers together
+- R is well equipped to run statistical evaluations on the backend of the app
+- Many useful packages that we can rely/depend on
+- `Shiny` approach makes it (relatively) easy to build UI and offload some (_important_) functionality to the browser
+
+
+## What is reQual?
+
+:::{.r-fit-text}
+reQual is (yet another) FOSS application for qualitative research powered by R programming language
+    - developed with reproducibility in mind 
+
+> How can CAQDAS enhance reproducibility of qualitative research?
+
+- basic coding of documents 
+  - RQDA-inspired toolset
+  - matching the features of more mature projects, such as QualCoder or proprietary tools, is not the top priority
+-  basic requirement for reproducibility
+   - FOSS & logs
+- team collaboration 
+  - ability to serve your own instance online with multiple-user projects, like Taguette
+  - enhances reproducibility by identifying consensus in coding
+  - accounting for the coders' background
+<!---
+> The uncritical adoption of a range of “technical fixes” (such as purposive sampling, grounded theory, multiple coding, triangulation, and respondent validation) does not, in itself, confer rigour. (Babour)
+--> 
+:::
+
+
+
+::: {.notes}
+Define reQual
+:::
+
+## reQual
+
+![](https://user-images.githubusercontent.com/54745940/210071200-537a190c-bd5f-4006-8ed8-a0bec7fc5c94.png)
+
+::: {.notes}
+Show reQual
+:::
+
+## Example of data on coding process
+
+:::: {.columns}
+::: {.column width="70%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/Xfk6KMkLtId4DNj/rql_overlap.png)
+:::
+::: {.column width="30%"}
+mutual overlap of coding among ~90 students
+::: 
+
+::::
+
+## Can you use it?
+
+:::: {.columns}
+
+::: {.column width="70%"}
+-   reQual is now a working prototype
+-   tested for teaching qualitative methods at two Czech universities
+<hr>
+
+::: {.r-fit-text}
+-   to teach basic coding for students `r fontawesome::fa("check", fill="green")`
+-   to help develop the program (bug reports, feature requests) `r fontawesome::fa("check", fill="green")`
+-   to conduct research `r fontawesome::fa("question", fill="red")` (it depends)
+    - `r fontawesome::fa("plus", fill="green")` you are in full control of the data
+    - `r fontawesome::fa("plus", fill="green")` necessary features are available
+    - `r fontawesome::fa("minus", fill="red")` heavy development leads to frequent breaking changes `r fontawesome::fa("arrow-right", fill="red")` you may need to isolate your version from updates
+:::
+
+
+:::
+
+::: {.column width="30%"}
+
+![](https://preview.redd.it/4dnvvjeuq0541.jpg?width=640&crop=smart&auto=webp&v=enabled&s=6ac67a76d66a5897378cec17424fe8e0e2ca17d2){max.height="550"}
+
+:::
+
+::::
+
+## Future development
+
+- handling of attributes and cases 
+- optimization for larger inputs
+- anonymization support
+- interoperable export format (QDA-XML)
+
+__Get involved!__
+
+## Reproducibility & qualitative research
+
+::: {.r-fit-text}
+- is reproducibility a useful and productive concept for qualitative research?
+  - the jury is still out
+- even in computational and quantitative research, reproducibility is always an ideal, not a done deal
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/d4m0svnAn2oLo5w/repro_spectrum.png){height="250px"}
+
+- reQual is a tool to think and experiment with the principle of reproducibility in qualitative research
+
+::: {.absolute bottom="30px" left="0"}
+Peng, Roger D. 2011. “Reproducible Research in Computational Science.” Science 334(6060): 1226–27.
+:::
+
+:::
