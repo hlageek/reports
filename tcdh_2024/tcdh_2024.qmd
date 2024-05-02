@@ -90,13 +90,29 @@ Nina Fárová
 ::::
 
 
-## About me
+## My research {.scrollable}
+
+- computational sociology of science
+- topic modeling
+
+Science mapping based on topics [SocArXiv](https://osf.io/preprints/socarxiv/94jd5)
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/topics.png)
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/disciplines.png)
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/researchers.png)
+
+Topic differences among funding agencies (WIP)
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/agencies.png)
 
 
+## Qualitative coding {.scrollable}
 
+::: {.r-fit-text}
 
-## Qualitative coding 
-
+Interpretative technique in social and health sciences
 
 - Tools
   - manual
@@ -110,10 +126,51 @@ Nina Fárová
     - e.g., newspaper articles
   - interview and focus group transcripts
   - field notes
+:::
 
-<div style="color: red;">
+<span style="color: red;">
 _Coding is just one way to conduct qualitative research!_
-</div>
+</span>
+
+
+## Reproducibility & replication in qualitative research {.scrollable}
+
+::: {.r-fit-text}
+>replicability is desirable in the humanities: by that, I mean that many empirical studies in the humanities should indeed be such that an independent repetition of it, using similar or different methods and conducted under similar circumstances, can be carried out. 
+
+(Peels 2019)
+
+> we argue that there are limits to replicability across all fields; but in some fields, including parts of the humanities, these limits severely undermine the value of replication to account for the value of research.
+
+(Penders, Holbrook, and de Rijcke 2019)
+
+>Most of the arguments with respect to the role of data and methods in RR \[repetitive research\] are valid primarily for research that operates with datasets that represent the domain being investigated as well as with algorithmic implementations of the method of analysis.
+
+(Schöch 2023)
+
+Repetitive research as a spectrum?
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/d4m0svnAn2oLo5w/repro_spectrum.png){height="250px"}
+
+(Peng 2011)
+
+:::
+
+## Transparency and openness {.scrollable}
+
+:::: {.columns}
+
+
+::: {.column width="50%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/khan.png)
+:::
+
+::: {.column width="50%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/campbell.png)
+::: 
+
+::::
+
 
 ## CAQDAS
 
@@ -143,46 +200,41 @@ _Coding is just one way to conduct qualitative research!_
 ){height="70"}
 [QCoder](https://docs.ropensci.org/qcoder/) - lightweight  coding package
 
+![](https://openqda.org/logos/logo_512x512_96dpi.PNG){height="70"} 
+[OpenQDA](https://openqda.org/) - new collaborative platform (launching this month)
+
+
 ### Wiki
 
 <iframe src="https://en.wikipedia.org/wiki/Computer-assisted_qualitative_data_analysis_software#Comparison_of_CAQDAS_software" height="500px" width=100%></iframe>
 
 :::
 
-::: {.notes}
-Situation with CAQDAS.
+
+
+
+## Can CAQDAS help in making qualitative research more "repeatable" and open?  
+
+:::: {.columns}
+::: {.column width="70%"}
+- CAQDAS is point and click and interpretations belong to researchers
+  - however, CAQDAS is the time when qualitative and computer coding meet (coding<sup>2</sup>)
+- motivations to develop our own CAQDAS
+  - [RQDA](https://rqda.r-forge.r-project.org/) - CAQDAS package for the R environment was deprecated in 2021
+  - rethinking qualitative research (coding) from the perspective of transparency, collaboration, openness and reproducibility
+  - pragmatic approach - moving the dial of qualitative coding on the reproducibility spectrum
+  - unassuming and unobtrusive approach - respecting qualitative researchers, not enforcing a new qualitative coding paradigm
 :::
-
-
-## Inspirational CAQDAS
-
-::: {layout="[1, 15]"}
-
+::: {.column width="30%"}
+![](https://preview.redd.it/4dnvvjeuq0541.jpg?width=640&crop=smart&auto=webp&v=enabled&s=6ac67a76d66a5897378cec17424fe8e0e2ca17d2){height="400px"}
 :::
-
-### R
-
-::: {layout="[1, 15]"}
-<br>
-
-[RQDA](https://rqda.r-forge.r-project.org/) - CAQDAS package for R (deprecated in 2021)
-
-![](https://r-packages.gitlab.io/rock/img/hex-logo.png)
-
-[ROCK](https://r-packages.gitlab.io/rock/) Reproducible Open Coding Kit geared towards quantitative ethnography
-
-![](https://github.com/ropenscilabs/qcoder/raw/master/images/hex/imgHex.png)
-
-
-::: 
-
-::: {.notes}
-Situation with FOSS options.
-:::
+::::
 
 ## Database schema RQDA
   
- ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/OylaHXDoes5Sc4Z/rqda_schema.png){height="600px"}
+ ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/OylaHXDoes5Sc4Z/rqda_schema.png){height="500px"}
+
+Open source helps!
 
 ::: {.notes}
 Compare databases
@@ -190,121 +242,56 @@ Compare databases
 
 ## Database schema reQual
   
- ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/huONA6vwyTc8vyV/rql_schema.png){height="600px"}
+ ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/huONA6vwyTc8vyV/rql_schema.png){height="500px"}
 
 
-::: {.notes}
-Compare databases
-:::
+## reQual {.scrollable}
 
-## R advantages?
+![](https://user-images.githubusercontent.com/54745940/210071200-537a190c-bd5f-4006-8ed8-a0bec7fc5c94.png){height=450px}
 
-- We do not speak other languages
-- As R is commonly used in the social sciences, having an application in R has the potential to bring qualitative and quantitative researchers together
-- R is well equipped to run statistical evaluations on the backend of the app
-- Many useful packages that we can rely/depend on
-- `Shiny` approach makes it (relatively) easy to build UI and offload some (_important_) functionality to the browser
+- reQual is now a working prototype / MVP
+- tested for teaching qualitative methods at two Czech universities
+- piloted by researchers  
 
+## reQual's contributions to "repeatability" and openness
 
-## What is reQual?
+- Implemented
+  - free and open source
+  - logs of user actions
+  - export of coded data and codebook
+  - collaboration 
+    - coding overlap and consensus
+    - __attributes of coders__
+- In progress
+  - exchangeable projects (REFI-QDA standard)
+  - support for deidentification/anonymization of data
 
-:::{.r-fit-text}
-reQual is (yet another) FOSS application for qualitative research powered by R programming language
-    - developed with reproducibility in mind 
-
-> How can CAQDAS enhance reproducibility of qualitative research?
-
-- basic coding of documents 
-  - RQDA-inspired toolset
-  - matching the features of more mature projects, such as QualCoder or proprietary tools, is not the top priority
--  basic requirement for reproducibility
-   - FOSS & logs
-- team collaboration 
-  - ability to serve your own instance online with multiple-user projects, like Taguette
-  - enhances reproducibility by identifying consensus in coding
-  - accounting for the coders' background
-<!---
-> The uncritical adoption of a range of “technical fixes” (such as purposive sampling, grounded theory, multiple coding, triangulation, and respondent validation) does not, in itself, confer rigour. (Babour)
---> 
-:::
-
-
-
-::: {.notes}
-Define reQual
-:::
-
-## reQual
-
-![](https://user-images.githubusercontent.com/54745940/210071200-537a190c-bd5f-4006-8ed8-a0bec7fc5c94.png)
-
-::: {.notes}
-Show reQual
-:::
-
-## Example of data on coding process
+## Coders' agreement
 
 :::: {.columns}
 ::: {.column width="70%"}
 ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/Xfk6KMkLtId4DNj/rql_overlap.png)
 :::
 ::: {.column width="30%"}
-mutual overlap of coding among ~90 students
+- mutual overlap of coding among ~90 students
+- visual (qualitative) examination rather than a metric
 ::: 
-
 ::::
 
-## Can you use it?
-
-:::: {.columns}
-
-::: {.column width="70%"}
--   reQual is now a working prototype
--   tested for teaching qualitative methods at two Czech universities
-<hr>
-
-::: {.r-fit-text}
--   to teach basic coding for students `r fontawesome::fa("check", fill="green")`
--   to help develop the program (bug reports, feature requests) `r fontawesome::fa("check", fill="green")`
--   to conduct research `r fontawesome::fa("question", fill="red")` (it depends)
-    - `r fontawesome::fa("plus", fill="green")` you are in full control of the data
-    - `r fontawesome::fa("plus", fill="green")` necessary features are available
-    - `r fontawesome::fa("minus", fill="red")` heavy development leads to frequent breaking changes `r fontawesome::fa("arrow-right", fill="red")` you may need to isolate your version from updates
-:::
+## Coders' consensus
 
 
-:::
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/consensus.png)
 
-::: {.column width="30%"}
 
-![](https://preview.redd.it/4dnvvjeuq0541.jpg?width=640&crop=smart&auto=webp&v=enabled&s=6ac67a76d66a5897378cec17424fe8e0e2ca17d2){max.height="550"}
+## Sensitivity of coding to coders' attributes
 
-:::
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/nObngWi2U2DLlAP/attributes.png)
 
-::::
+## Visions of the future
 
-## Future development
-
-- handling of attributes and cases 
-- optimization for larger inputs
-- anonymization support
-- interoperable export format (QDA-XML)
-
-__Get involved!__
-
-## Reproducibility & qualitative research
-
-::: {.r-fit-text}
-- is reproducibility a useful and productive concept for qualitative research?
-  - the jury is still out
-- even in computational and quantitative research, reproducibility is always an ideal, not a done deal
-
-![](https://owncloud.cesnet.cz/remote.php/dav/public-files/d4m0svnAn2oLo5w/repro_spectrum.png){height="250px"}
-
-- reQual is a tool to think and experiment with the principle of reproducibility in qualitative research
-
-::: {.absolute bottom="30px" left="0"}
-Peng, Roger D. 2011. “Reproducible Research in Computational Science.” Science 334(6060): 1226–27.
-:::
-
-:::
+- support for data attributes and cases (analytical units)
+- launching a service
+- more analytical tools
+- always more optimizations and UI improvements
+- re-integration from GUI back to R
