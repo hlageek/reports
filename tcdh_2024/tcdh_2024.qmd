@@ -16,7 +16,7 @@ output-file: index.html
 ## Coding<sup>2</sup>: Exploring reproducibility in qualitative data analysis (QDA) through research software development
 
 ::: {.absolute bottom="200" left="700"}
-<img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/FeiL6U4pYaJYEsS/rql_logo.png"/>
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/FeiL6U4pYaJYEsS/rql_logo.png){width="200px"}
 :::
 
 ::: {.absolute bottom="100" left=""}
@@ -295,3 +295,9 @@ Compare databases
 - more analytical tools
 - always more optimizations and UI improvements
 - re-integration from GUI back to R
+
+## Links
+
+- [Requal on GitHub](https://github.com/RE-QDA/requal)
+- [Requal Wiki](https://github.com/RE-QDA/requal/wiki)
+- [Project page with demo](https://requal.fsv.cuni.cz/)
