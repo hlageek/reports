@@ -16,6 +16,8 @@ output-file: index.html
 
 ## Associations between epistemic position-takings and social variables in science
 
+<br>
+[https://hlageek.github.io/reports/homology2024]{style="font-size: 60%; text-align: right;"}
 
 :::{.absolute bottom="130" left="0" style="font-size: 70%;"}
 [Radim Hladík](https://www.radimhladik.net/)<sup>1</sup>,
@@ -35,7 +37,7 @@ output-file: index.html
 ## Acknowledgement
 
 - Robert Zajonc Institute for Social Studies (ISS), University of Warsaw 
-- Local Organisation Committee: Tomasz Warczok, Andrzej Turkowski, Tomasz Zarycki, University of Warsaw 
+- Local Organisation Committee: Tomasz Warczok, Andrzej Turkowski, Tomasz Zarycki 
 
 ## TopSBM topic model of the Czech database of research outputs
 
@@ -305,7 +307,7 @@ targets::tar_read(pca_gov_viz, store = here::here("_copenhagen")))
 
 :::
 
-## Bonus
+## Sneak peek
 
 ```{r}
 #| echo: false
@@ -313,4 +315,24 @@ targets::tar_read(pca_gov_viz, store = here::here("_copenhagen")))
 #| fig-width: 12
 #| fig-height: 6
 knitr::include_graphics("genres_clust.jpg")
+```
+
+## Sneak peek
+
+```{r}
+#| echo: false
+#| label: songs2
+#| fig-width: 12
+#| fig-height: 6
+knitr::include_graphics("genres.png")
+```
+
+## Sneak peek
+
+```{r}
+#| echo: false
+#| label: songs3
+#| fig-width: 12
+#| fig-height: 6
+knitr::include_graphics("lyrics.png")
 ```
