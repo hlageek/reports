@@ -39,6 +39,15 @@ output-file: index.html
 - Robert Zajonc Institute for Social Studies (ISS), University of Warsaw 
 - Local Organisation Committee: Tomasz Warczok, Andrzej Turkowski, Tomasz Zarycki 
 
+## Outline
+
+- spaces of positions and __position-takings__ in science
+- topic model of scientific abstracts
+- mapping the "disciplinary matrix"
+- position-takings of scientists as projections of individual topic portfolios
+- relating position-takings and social variables
+- application to the field of cultural production?
+
 ## TopSBM topic model of the Czech database of research outputs
 
 
@@ -307,7 +316,7 @@ targets::tar_read(pca_gov_viz, store = here::here("_copenhagen")))
 
 :::
 
-## Sneak peek
+## Sneak peek - field of cultural production
 
 ```{r}
 #| echo: false
@@ -317,7 +326,7 @@ targets::tar_read(pca_gov_viz, store = here::here("_copenhagen")))
 knitr::include_graphics("genres_clust.jpg")
 ```
 
-## Sneak peek
+## Sneak peek - field of cultural production
 
 ```{r}
 #| echo: false
@@ -327,7 +336,7 @@ knitr::include_graphics("genres_clust.jpg")
 knitr::include_graphics("genres.png")
 ```
 
-## Sneak peek
+## Sneak peek - field of cultural production
 
 ```{r}
 #| echo: false
@@ -337,7 +346,7 @@ knitr::include_graphics("genres.png")
 knitr::include_graphics("lyrics.png")
 ```
 
-## Sneak peek
+## Sneak peek - field of cultural production
 
 ```{r}
 #| echo: false
