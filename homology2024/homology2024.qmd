@@ -336,3 +336,13 @@ knitr::include_graphics("genres.png")
 #| fig-height: 6
 knitr::include_graphics("lyrics.png")
 ```
+
+## Sneak peek
+
+```{r}
+#| echo: false
+#| label: songs4
+#| fig-width: 12
+#| fig-height: 6
+knitr::include_graphics("artists.png")
+```
