@@ -1,0 +1,346 @@
+---
+format:
+  revealjs: 
+    chalkboard: 
+      buttons: false
+    reference-location: block 
+    logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
+    footer: 28th International Conference on Science, Technology and Innovation Indicators, September 18-20, 2024
+    progress: true
+    scrollable: true
+    embed-resources: false
+    css: quarto_presentations.css
+from: markdown+emoji
+output-file: index.html
+---
+
+## "Researchers in the disciplinary matrix: A geometric map of science based on topics and disciplines"
+
+<br>
+[https://hlageek.github.io/reports/homology2024]{style="font-size: 60%; text-align: right;"}
+
+:::{.absolute bottom="130" left="0" style="font-size: 70%;"}
+[Radim Hladík](https://www.radimhladik.net/)<sup>1</sup>,
+[Yann Renisio](https://www.sciencespo.fr/osc/fr/content/yann-renisio.html)<sup>2</sup>
+:::
+
+:::{.absolute bottom="20" left="0"style="font-size: 50%;"}
+
+<sup>1</sup> Centre for Science, Technology, and Society Studies (CSTSS) @ Institute of Philosophy, Czech Academy of Sciences<br>
+[hladik@flu.cas.cz](mailto:hladik@flu.cas.cz), [\@hlageek@scholar.social](https://scholar.social/@hlageek)
+<br>
+<sup>2</sup> Centre for Research on social InequalitieS (CRIS) @ CNRS/Sciences-Po<br>
+[yann.renisio@sciencespo.fr](mailto:yann.renisio@sciencespo.fr) 
+
+:::
+
+## Acknowledgement
+
+- Robert Zajonc Institute for Social Studies (ISS), University of Warsaw 
+- Local Organisation Committee: Tomasz Warczok, Andrzej Turkowski, Tomasz Zarycki 
+
+## Outline
+
+- spaces of positions and __position-takings__ in science
+- topic model of scientific abstracts
+- mapping the "disciplinary matrix"
+- position-takings of scientists as projections of individual topic portfolios
+- relating position-takings and social variables
+- application to the field of cultural production?
+
+## TopSBM topic model of the Czech database of research outputs
+
+
+```{r}
+#| echo: false
+#| label: topmodel
+tar_read_custom <- function(x, path = "/Volumes/CardDisk/repos_backup/mapping_knowledge", store = "_targets") {
+withr::with_dir(path,
+targets::tar_read(x, store = here::here(store))) 
+}
+
+tar_read_custom("topic_stats_table") 
+ |> gt::as_raw_html()
+```
+
+## Principal components 1 & 2
+
+::: {.panel-tabset}
+
+### Topics
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: viz1
+#| fig-width: 7
+#| fig-height: 7
+tar_read_custom("pca_disc_ind_viz")[[2]]
+```
+:::
+
+### Disciplines
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: viz2
+#| fig-width: 7
+#| fig-height: 7
+tar_read_custom("pca_disc_ind_viz")[[1]] +
+ggplot2::labs(x = NULL, y = NULL)
+```
+:::
+
+:::
+
+## Principal components 2 & 3
+
+::: {.panel-tabset}
+
+### Topics
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: viz23a
+#| fig-width: 7
+#| fig-height: 7
+tar_read_custom("pca_disc_ind_viz")[[4]]
+```
+:::
+
+### Disciplines
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: viz23b
+#| fig-width: 7
+#| fig-height: 7
+tar_read_custom("pca_disc_ind_viz")[[3]] +
+ggplot2::labs(x = NULL, y = NULL)
+```
+:::
+
+:::
+
+
+## Interpretation of topic polarity
+
+
+```{r}
+#| echo: false
+#| label: toptables
+toptables <- tar_read_custom("axes_coordinates_table") 
+toptables |>  gt::as_raw_html()
+```
+
+
+## Projection of individual scientists
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: individuals
+#| fig-width: 7
+#| fig-height: 7
+tar_read_custom("pca_projection_field_viz_1_2") 
+```
+
+:::
+
+## Jean Piaget's map of the sciences
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: piaget
+#| out-width: 6in
+#| out-height: 6in
+knitr::include_graphics("individuals-piaget.png")
+```
+:::
+
+[Source: [Raphaël Sandoz, Interactive Historical Atlas of the Disciplines, University of Geneva](https://atlas-disciplines.unige.ch/#Jean%20Piaget)]{style="font-size: 40%"}
+
+## Consensus map of science
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: consensus
+#| out-width: 6in
+#| out-height: 6in
+knitr::include_graphics("individuals-consensus.png")
+```
+::: 
+
+[Source: Klavans, Richard, and Kevin W. Boyack. 2009. “Toward a Consensus Map of Science.” _Journal of the American Society for Information Science and Technology_ 60 (3): 455–76. https://doi.org/10.1002/asi.20991.]{style="font-size: 40%"}
+
+## Articles
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: articles
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_articles_viz") 
+```
+
+:::
+
+## Team science
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: team
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_coauthors_viz") 
+```
+
+:::
+
+## Gender in science
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: gender
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_gender_viz") 
+```
+
+:::
+
+## Czech Academy of Sciences
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: cas
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_cas_viz") 
+```
+
+:::
+
+## Hospitals
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: hospitals
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_hospital_viz") 
+```
+
+:::
+
+## Art schools
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: art
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_art_viz") 
+```
+
+:::
+
+## Principal investigators
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: pis
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_pi_viz") 
+```
+
+:::
+
+## PIs in applied research
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: applied
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_applied_viz") 
+```
+
+:::
+
+## PIs with government funding
+
+::: {.center-text}
+
+```{r}
+#| echo: false
+#| label: gov
+#| fig-width: 10
+#| fig-height: 6
+tar_read_custom("pca_gov_viz") 
+```
+
+:::
+
+## Sneak peek - field of cultural production
+
+```{r}
+#| echo: false
+#| label: songs1
+#| fig-width: 12
+#| fig-height: 6
+knitr::include_graphics("genres_clust.jpg")
+```
+
+## Sneak peek - field of cultural production
+
+```{r}
+#| echo: false
+#| label: songs2
+#| fig-width: 12
+#| fig-height: 6
+knitr::include_graphics("genres.png")
+```
+
+## Sneak peek - field of cultural production
+
+```{r}
+#| echo: false
+#| label: songs3
+#| fig-width: 12
+#| fig-height: 6
+knitr::include_graphics("lyrics.png")
+```
+
+## Sneak peek - field of cultural production
+
+```{r}
+#| echo: false
+#| label: songs4
+#| fig-width: 12
+#| fig-height: 6
+knitr::include_graphics("artists.png")
+```
