@@ -36,7 +36,7 @@ CNRS/Sciences-Po<br>
 :::
 
 :::{.absolute bottom="20" left=0 right=0 style="margin: auto auto;"}
-[https://hlageek.github.io/reports/sti2024]{ style="text-align: center"}
+[https://hlageek.github.io/reports/sti2024](https://hlageek.github.io/reports/sti2024){style="text-align: center"}
 :::
 
 ## Mapping science - with disciplines {.scrollable}
