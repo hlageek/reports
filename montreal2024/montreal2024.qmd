@@ -1,0 +1,374 @@
+---
+format:
+  revealjs: 
+    chalkboard: 
+      buttons: false
+    reference-location: block 
+    logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
+    footer: 28th International Conference on Science, Technology and Innovation Indicators, Montreal (virtual), December 5, 2024
+    progress: true
+    embed-resources: false
+    css: quarto_presentations.css
+from: markdown+emoji
+output-file: index.html
+execute:
+  cache: true
+---
+
+### Researchers in the disciplinary matrix
+#### A geometric map of science based on topics and disciplines
+
+
+
+:::{.absolute bottom="280" left="0" style="font-size: 70%;"}
+[Radim Hladík](https://www.radimhladik.net/),<sup>1</sup> [Yann Renisio](https://www.sciencespo.fr/osc/fr/content/yann-renisio.html)<sup>2</sup>
+:::
+
+:::{.absolute bottom="90" left="0" style="font-size: 50%;"}
+
+<sup>1</sup> Centre for Science, Technology, and Society Studies (CSTSS)<br>
+Institute of Philosophy, Czech Academy of Sciences<br>
+[hladik@flu.cas.cz](mailto:hladik@flu.cas.cz), [\@hlageek@sciences.social](https://scholar.social/@hlageek)
+<br><br>
+<sup>2</sup> Centre for Research on social InequalitieS (CRIS)<br>
+CNRS/Sciences-Po<br>
+[yann.renisio@sciencespo.fr](mailto:yann.renisio@sciencespo.fr) 
+:::
+
+:::{.absolute bottom="20" left=0 right=0 style="margin: auto auto;"}
+[https://hlageek.github.io/reports/sti2024](https://hlageek.github.io/reports/sti2024){style="text-align: center"}
+:::
+
+## Mapping science - with disciplines {.scrollable}
+
+![Interactive Historical Atlas of the Disciplines](https://atlas-disciplines.unige.ch/Images/Source_images/Park_Roswell_1841_Pantology_or_A_systematic_survey_of_human_knowledge_p_iii.jpg){height=600}
+
+## Mapping science - with disciplines {.scrollable}
+
+![Interactive Historical Atlas of the Disciplines](https://atlas-disciplines.unige.ch/Images/Source_images/Whittaker_Thomas_1903_A_Compendious_Classification_of_the_Sciences_Mind_12_45_p_22.jpg){height=600}
+
+## Mapping science - with clusters {.scrollable}
+
+::: {.r-stack}
+
+![CSET Map of Science](https://cset.georgetown.edu/wp-content/uploads/41F1CAC7-DCBB-47F9-AFEE-511724F4F3B9_1_201_a-1.jpeg)
+
+::: {.fragment data-fragment-index="1"}
+![](https://www.pngkey.com/png/full/424-4242498_compass-north-png-download-compass-rose-map.png){height=400}
+:::
+
+:::
+
+## Mapping science - with people {.scrollable}
+
+
+![](https://www.researchgate.net/profile/Keijo-Rahkonen/publication/303017348/figure/fig4/AS:670342351695879@1536833479504/The-space-of-arts-and-social-sciences-Analysis-of-correspondences-individuals-in-Pierre_W640.jpg){height=600 fig-align="center"}
+
+
+## Motivation
+
+```{r}
+#| echo: false
+tar_read_custom <- function(x, path = "/home/radim/repos/mapping_knowledge", store = "_targets") {
+withr::with_dir(path,
+targets::tar_read_raw(x, store = here::here(store))
+) 
+}
+stats <- tar_read_custom("stats") 
+```
+
+- How can we map epistemological orientations of scientists?
+  - Combine two traditions of science mapping:
+    - scientometrics (science is dynamic, i.e., clusters are more telling than disciplines; focus on publications)
+    - sociology of science (disciplines matter; focus on individuals)
+  - Topic modeling
+    - analysis of "disciplinary matrix" (Kuhn) of topics
+    - projection of individual topic portfolios
+  
+
+## Protocol 
+
+::: {.r-fit-text}
+- data: `r stats$n_pubs` records (articles, books, book chapters, proceedings) from the Czech _R&D Information System_
+1) topic model of scientific abstracts
+    - document topic portfolios (distribution of topics per document)
+      - individual topic portfolios (average over documents that define an individual's scientific contribution)
+      - disciplinary topic portfolios (average over documents that define a discipline)
+2) mapping the "disciplinary matrix" 
+    - compositional data transformation
+    - methods of geometric analysis (PCA)
+3) projection of individual topic portfolios onto knowledge space defined by disciplinary matrix
+4) relating epistemological and social variables
+:::
+
+## TopSBM topic model of the Czech database of research outputs
+
+
+```{r}
+#| echo: false
+#| label: topmodel
+tar_read_custom("topic_stats_table") |> gt::as_raw_html()
+```
+
+- Corpus:
+  - Documents: `r stats$n_top_pubs`
+  - Terms: 116703
+
+## Clustering of FORD disciplines by topics
+
+```{r}
+#| echo: false
+#| label: clust
+#| fig-width: 6
+#| fig-height: 7
+#| fig-align: center
+
+tar_read_custom("disc_clust_viz")
+```
+
+## Principal components 1 & 2 - topics
+
+```{r}
+#| echo: false
+#| label: viz1
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: center
+
+tar_read_custom("pca_disc_ind_viz")[[2]]
+```
+
+
+
+## Principal components 1 & 2 - disciplines
+
+```{r}
+#| echo: false
+#| label: viz2
+#| fig-width: 7
+#| fig-height: 7
+#| fig-align: center
+
+tar_read_custom("pca_disc_ind_viz")[[1]] +
+ggplot2::labs(x = NULL, y = NULL)
+```
+
+## Interpretation of topic polarity - axis 1 {.scrollable}
+
+
+```{r}
+#| echo: false
+#| label: toptables1
+
+toptables <- tar_read_custom("axes_coordinates_table") 
+toptables[[1]] 
+```
+
+## Interpretation of topic polarity - axis 2 {.scrollable}
+
+
+```{r}
+#| echo: false
+#| label: toptables2
+
+toptables <- tar_read_custom("axes_coordinates_table") 
+toptables[[2]] 
+```
+
+## Principal components 2 & 3 - topics
+
+```{r}
+#| echo: false
+#| label: viz23a
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: center
+tar_read_custom("pca_disc_ind_viz")[[4]]
+```
+
+## Principal components 2 & 3 - disciplines
+
+```{r}
+#| echo: false
+#| label: viz23b
+#| fig-width: 7
+#| fig-height: 7
+#| fig-align: center
+tar_read_custom("pca_disc_ind_viz")[[3]] +
+ggplot2::labs(x = NULL, y = NULL)
+```
+
+## Interpretation of topic polarity - axis 3 {.scrollable}
+
+```{r}
+#| echo: false
+#| label: toptables3
+#| output: asis
+
+
+toptables <- tar_read_custom("axes_coordinates_table") 
+toptables[[3]] |>  
+  gt::as_raw_html()
+```
+
+## 6 principles of disciplinary classification of topics
+
+:::: {.columns}
+::: {.column}
+```{r}
+#| echo: false
+#| label: allaxes
+pca_disc <- tar_read_custom("pca_disc")
+
+eigs <- pca_disc$sdev^2
+scree_data <- tidytable::tidytable(
+    pc = seq_along(pca_disc$sdev),
+    sd = pca_disc$sdev,
+    eigs = eigs,
+    proportion = eigs / sum(eigs),
+    cumulative = cumsum(eigs) / sum(eigs)
+  )
+require(ggplot2)
+scree_data |> 
+ggplot(aes(pc, eigs)) +
+geom_point(size = 2) +
+geom_line() +
+theme_bw() +
+labs(
+  x = "Principal component",
+  y = "Eigenvalue"
+  )
+```
+:::
+::: {.column}
+- Culture -- Nature
+- Life -- Non-life
+- Materials -- Methods
+- Synthesis -- Analysis
+- Applied -- Fundamental
+- Description/Observation -- Prescription/Experiment
+:::
+
+::::
+
+## Projection of individual scientists - axes 1 & 2
+
+```{r}
+#| echo: false
+#| label: individuals
+#| fig-width: 7
+#| fig-height: 7
+#| fig-align: center
+tar_read_custom("pca_projection_field_viz_1_2") 
+```
+
+
+
+## Jean Piaget's map of the sciences {.scrollable}
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: piaget
+#| out-width: 6in
+#| out-height: 6in
+
+knitr::include_graphics("individuals-piaget.png")
+```
+:::
+
+[Source: [Raphaël Sandoz, Interactive Historical Atlas of the Disciplines, University of Geneva](https://atlas-disciplines.unige.ch/#Jean%20Piaget)]{style="font-size: 40%"}
+
+## Consensus map of science {.scrollable}
+
+::: {.center-text}
+```{r}
+#| echo: false
+#| label: consensus
+#| out-width: 6in
+#| out-height: 6in
+
+
+knitr::include_graphics("individuals-consensus.png")
+```
+::: 
+
+[Source: Klavans, Richard, and Kevin W. Boyack. 2009. “Toward a Consensus Map of Science.” _Journal of the American Society for Information Science and Technology_ 60 (3): 455–76. https://doi.org/10.1002/asi.20991.]{style="font-size: 40%"}
+
+## Projection of individual scientists - axes 2 & 3
+
+```{r}
+#| echo: false
+#| label: individuals2
+#| fig-width: 7
+#| fig-height: 7
+#| fig-align: center
+tar_read_custom("pca_projection_field_viz_2_3") 
+```
+
+## Associations between epistemological and social positions {.scrollable}
+
+Publication attributes
+```{r}
+#| echo: false
+#| label: articles
+#| fig-height: 4
+
+require(patchwork)
+tar_read_custom("pca_articles_viz") + 
+tar_read_custom("pca_coauthors_viz") +
+tar_read_custom("pca_gender_viz") +
+plot_layout(guides = "collect", axis_titles = "collect_x") &
+theme(legend.position = "bottom", plot.background = element_blank())
+```
+
+## Associations between epistemological and social positions {.scrollable}
+
+Affiliations
+```{r}
+#| echo: false
+#| label: validation2
+#| fig-height: 4
+tar_read_custom("pca_cas_viz") + 
+tar_read_custom("pca_hospital_viz") +
+tar_read_custom("pca_art_viz") +
+plot_layout(guides = "collect", axis_titles = "collect_x") &
+theme(legend.position = "bottom", plot.background = element_blank())
+```
+
+## Associations between epistemological and social positions {.scrollable}
+
+ Principal investigators
+
+```{r}
+#| echo: false
+#| label: validation3
+#| fig-height: 4
+tar_read_custom("pca_pi_viz") + 
+tar_read_custom("pca_applied_viz") +
+tar_read_custom("pca_gov_viz") +
+plot_layout(guides = "collect", axis_titles = "collect_x") &
+theme(legend.position = "bottom", plot.background = element_blank())
+```
+
+## Gender(ed) topic portfolios
+
+
+```{r}
+#| echo: false
+#| label: genderportfolios
+#| fig-height: 7
+#| fig-width: 7
+#| fig-align: center
+
+tar_read_custom("pca_gender_disc_projection") 
+```
+
+## Thank you!
+
+- We mapped the landscape of scientific knowledge with algorithitmic linguistic topics and disciplinary metadata 
+- Variances of topic ratios across disciplines reveal multidimensional principles of knowledge classification
+- Individual topic portfolios can be projected on continuous epistemological scales
+
+
+Preprint on SocArXiv: [https://osf.io/94jd5/](https://osf.io/94jd5/)
