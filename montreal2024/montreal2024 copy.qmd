@@ -1,8 +1,7 @@
 ---
 format:
   revealjs: 
-    chalkboard: 
-      buttons: false
+    chalkboard: true
     reference-location: block 
     logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
     footer: Université de Montréal (virtual), December 5, 2024
@@ -51,53 +50,36 @@ execute:
 - interpretation of documents ➡️ computational text analysis
 :::
 
-## Agenda {style="font-size: 85%;"}
-
-1. Mapping science with topic modeling
-  - [overview of the paper [Hladík, Radim, and Yann Renisio. 2025. “Mapping Knowledge: Topic Analysis of Science Locates Researchers in Disciplinary Landscape.” Poetics 108 (January):101950.](https://authors.elsevier.com/a/1k8dn,6w-Xyfz-) [https://doi.org/10.1016/j.poetic.2024.101950](https://doi.org/10.1016/j.poetic.2024.101950). ]{style="font-size: 50%;"}
-2. Sociological musing on topic modeling
-3. Works in progress
+## Mapping science - with disciplines {.scrollable}
 
 
-## Mapping science - with disciplines
+## Mapping science - with disciplines {.scrollable}
 
-::: {.r-stack}
+![Interactive Historical Atlas of the Disciplines](https://atlas-disciplines.unige.ch/Images/Source_images/Park_Roswell_1841_Pantology_or_A_systematic_survey_of_human_knowledge_p_iii.jpg){height=600}
 
-![Interactive Historical Atlas of the Disciplines](https://atlas-disciplines.unige.ch/Images/Source_images/Park_Roswell_1841_Pantology_or_A_systematic_survey_of_human_knowledge_p_iii.jpg){height=500}
+## Mapping science - with disciplines {.scrollable}
 
-::: {.fragment data-fragment-index="1" style="background: rgba(255, 255, 255, 0.6);"}
-- hard separations
-- poorly captures change
-:::
+![Interactive Historical Atlas of the Disciplines](https://atlas-disciplines.unige.ch/Images/Source_images/Whittaker_Thomas_1903_A_Compendious_Classification_of_the_Sciences_Mind_12_45_p_22.jpg){height=600}
 
-:::
-
-## Mapping science - with bibliometric clusters
+## Mapping science - with clusters {.scrollable}
 
 ::: {.r-stack}
 
-![CSET Map of Science](https://cset.georgetown.edu/wp-content/uploads/41F1CAC7-DCBB-47F9-AFEE-511724F4F3B9_1_201_a-1.jpeg){height=500}
+![CSET Map of Science](https://cset.georgetown.edu/wp-content/uploads/41F1CAC7-DCBB-47F9-AFEE-511724F4F3B9_1_201_a-1.jpeg)
 
-::: {.fragment data-fragment-index="1" style="background: rgba(255, 255, 255, 0.6);"}
-- no directions (coordinates are artefacts of layout algorithms)
-- only 2D
+::: {.fragment data-fragment-index="1"}
+![](https://www.pngkey.com/png/full/424-4242498_compass-north-png-download-compass-rose-map.png){height=400}
 :::
 
 :::
 
-## Mapping science - with social variables
+## Mapping science - with people {.scrollable}
 
-::: {.r-stack}
 
-![P. Bourdieu - Homo Academicus](https://www.researchgate.net/profile/Keijo-Rahkonen/publication/303017348/figure/fig4/AS:670342351695879@1536833479504/The-space-of-arts-and-social-sciences-Analysis-of-correspondences-individuals-in-Pierre_W640.jpg){height=550 fig-align="center"}
+![](https://www.researchgate.net/profile/Keijo-Rahkonen/publication/303017348/figure/fig4/AS:670342351695879@1536833479504/The-space-of-arts-and-social-sciences-Analysis-of-correspondences-individuals-in-Pierre_W640.jpg){height=600 fig-align="center"}
 
-::: {.fragment data-fragment-index="1" style="background: rgba(255, 255, 255, 0.6);"}
-- map of social space, not a map of knowledge
-:::
 
-:::
-
-## Challenge
+## Motivation
 
 ```{r}
 #| echo: false
@@ -109,22 +91,14 @@ targets::tar_read_raw(x, store = here::here(store))
 stats <- tar_read_custom("stats") 
 ```
 
-- Can we develop a new way of mapping scientific knowledge?
-  - Overcoming the weaknesses of traditional approaches by building on their strengths:
-    - 💡sociology: _scientists as the (ultimate) unit of analysis in their capacity as knowledge producers_
-    - 💡scientometrics: _empirical, dynamic, bottom-up approach with publications as input_
-    - 💡disciplinary classification: _meaningful coordinate system with hierarchy_
-
-## Topic modeling to the rescue
-
-Topic modeling enables the following solution: 
-
-- Step 1: Map the space of knowledge
-  - analysis of the "disciplinary matrix" (Kuhn) of topics
-    - juxtaposition of what individuals do (latent topics) and what they say they do (designated disciplines)
-    - in other words: using latent classes to understand a practical classification schema
-- Step 2: Locate individuals in the map of knowledge
-  - projection of individual topic portfolios
+- How can we map epistemological orientations of scientists?
+  - Combine two traditions of science mapping:
+    - scientometrics (science is dynamic, i.e., clusters are more telling than disciplines; focus on publications)
+    - sociology of science (disciplines matter; focus on individuals)
+  - Topic modeling
+    - analysis of "disciplinary matrix" (Kuhn) of topics
+    - projection of individual topic portfolios
+  
 
 ## Protocol 
 
@@ -166,12 +140,7 @@ tar_read_custom("topic_stats_table") |> gt::as_raw_html()
 tar_read_custom("disc_clust_viz")
 ```
 
-## Principal components 1 & 2 
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
+## Principal components 1 & 2 - topics
 
 ```{r}
 #| echo: false
@@ -182,10 +151,10 @@ tar_read_custom("disc_clust_viz")
 
 tar_read_custom("pca_disc_ind_viz")[[2]]
 ```
-:::
 
-::: {.column width="50%"}
 
+
+## Principal components 1 & 2 - disciplines
 
 ```{r}
 #| echo: false
@@ -197,8 +166,6 @@ tar_read_custom("pca_disc_ind_viz")[[2]]
 tar_read_custom("pca_disc_ind_viz")[[1]] +
 ggplot2::labs(x = NULL, y = NULL)
 ```
-:::
-::::
 
 ## Interpretation of topic polarity - axis 1 {.scrollable}
 
@@ -410,10 +377,6 @@ theme(legend.position = "bottom", plot.background = element_blank())
 
 tar_read_custom("pca_gender_disc_projection") 
 ```
-
-
-## 
-
 
 ## Thank you!
 
