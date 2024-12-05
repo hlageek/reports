@@ -51,7 +51,7 @@ execute:
 - interpretation of documents ➡️ computational text analysis
 :::
 
-## Agenda {style="font-size: 85%;"}
+## Agenda 
 
 1. Mapping science with topic modeling
   - [overview of the paper [Hladík, Radim, and Yann Renisio. 2025. “Mapping Knowledge: Topic Analysis of Science Locates Researchers in Disciplinary Landscape.” Poetics 108 (January):101950.](https://authors.elsevier.com/a/1k8dn,6w-Xyfz-) [https://doi.org/10.1016/j.poetic.2024.101950](https://doi.org/10.1016/j.poetic.2024.101950). ]{style="font-size: 50%;"}
@@ -115,15 +115,15 @@ stats <- tar_read_custom("stats")
     - 💡scientometrics: _empirical, dynamic, bottom-up approach with publications as input_
     - 💡disciplinary classification: _meaningful coordinate system with hierarchy_
 
-## Topic modeling to the rescue
+## Topic modeling + GDA to the rescue
 
-Topic modeling enables the following solution: 
+Topic modeling + GDA enable the following solution: 
 
 - Step 1: Map the space of knowledge
   - analysis of the "disciplinary matrix" (Kuhn) of topics
     - juxtaposition of what individuals do (latent topics) and what they say they do (designated disciplines)
     - in other words: using latent classes to understand a practical classification schema
-- Step 2: Locate individuals in the map of knowledge
+- Step 2: Locate individuals on the map of knowledge
   - projection of individual topic portfolios
 
 ## Protocol 
@@ -200,16 +200,21 @@ ggplot2::labs(x = NULL, y = NULL)
 :::
 ::::
 
-## Interpretation of topic polarity - axis 1 {.scrollable}
+## Interpretation of topic polarity - axis 1 {.scrollable} 
 
-
+::: {style="font-size: 55%;"}
 ```{r}
 #| echo: false
 #| label: toptables1
 
 toptables <- tar_read_custom("axes_coordinates_table") 
-toptables[[1]] 
+toptables[[1]] |>
+  gt::tab_style(
+    style = gt::cell_text(size = "12px"),
+    locations = gt::cells_body()
+  )
 ```
+:::
 
 ## Interpretation of topic polarity - axis 2 {.scrollable}
 
@@ -219,10 +224,18 @@ toptables[[1]]
 #| label: toptables2
 
 toptables <- tar_read_custom("axes_coordinates_table") 
-toptables[[2]] 
+toptables[[2]] |>
+  gt::tab_style(
+    style = gt::cell_text(size = "12px"),
+    locations = gt::cells_body()
+  )
 ```
 
-## Principal components 2 & 3 - topics
+## Principal components 2 & 3 
+
+:::: {.columns}
+
+::: {.column width="50%"}
 
 ```{r}
 #| echo: false
@@ -232,9 +245,9 @@ toptables[[2]]
 #| fig-align: center
 tar_read_custom("pca_disc_ind_viz")[[4]]
 ```
+:::
 
-## Principal components 2 & 3 - disciplines
-
+::: {.column width="50%"}
 ```{r}
 #| echo: false
 #| label: viz23b
@@ -244,6 +257,9 @@ tar_read_custom("pca_disc_ind_viz")[[4]]
 tar_read_custom("pca_disc_ind_viz")[[3]] +
 ggplot2::labs(x = NULL, y = NULL)
 ```
+:::
+
+::::
 
 ## Interpretation of topic polarity - axis 3 {.scrollable}
 
@@ -254,8 +270,11 @@ ggplot2::labs(x = NULL, y = NULL)
 
 
 toptables <- tar_read_custom("axes_coordinates_table") 
-toptables[[3]] |>  
-  gt::as_raw_html()
+toptables[[3]] |>
+  gt::tab_style(
+    style = gt::cell_text(size = "12px"),
+    locations = gt::cells_body()
+  )
 ```
 
 ## 6 principles of disciplinary classification of topics
@@ -353,6 +372,48 @@ knitr::include_graphics("individuals-consensus.png")
 tar_read_custom("pca_projection_field_viz_2_3") 
 ```
 
+
+## Importance of multidimensionality
+
+::: {.r-stack}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| label: individualsx
+#| fig-width: 7
+#| fig-height: 7
+#| fig-align: center
+tar_read_custom("pca_projection_field_viz_1_2") 
+```
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+#| label: individuals2x
+#| fig-width: 7
+#| fig-height: 7
+#| fig-align: center
+tar_read_custom("pca_projection_field_viz_2_3") 
+```
+
+:::
+
+::::
+
+::: {.fragment data-fragment-index="1" .absolute bottom="0" left="200" style="background: rgba(255, 255, 255, 0.6);"}
+- humanities and medicine are 
+  - in proximity on axes 1&2
+  - in fundamental opposition on axis 3
+:::
+
+:::
+
 ## Associations between epistemological and social positions {.scrollable}
 
 Publication attributes
@@ -412,14 +473,40 @@ tar_read_custom("pca_gender_disc_projection")
 ```
 
 
-## 
+## Sociological insights about topic modeling {style="font-size: 85%;"}
 
+- original goal of TM (in information and computer sciences): **information retrieval** in unlabelled corpora
+  - emphasis is on the topics, i.e., the term-topic matrix
+    - document-topic matrix provides loadings of documents on the topics
+  - LDA purposefully minimizes between-topic correlations (lack of relationality)
+- the emphasis on term-topic matrix carried over to the humanities and social sciences
+  - bias towards linguistic and discursive analyses
+  - cf. DiMaggio et al. 2013: relationality of meaning, heteroglossia, interpretative frames
 
-## Thank you!
+## Importance of document-topic matrices
 
-- We mapped the landscape of scientific knowledge with algorithitmic linguistic topics and disciplinary metadata 
-- Variances of topic ratios across disciplines reveal multidimensional principles of knowledge classification
-- Individual topic portfolios can be projected on continuous epistemological scales
+- meaningful (interpretable) columns in DT matrices
+  - advanatge of topic vectors over embedding vectors
+- two-mode analytical procedures (Mohr 1998)
+  - we usually know more about documents than their content (e.g., authors)
+  - 
 
+## Methodological implications
 
-Preprint on SocArXiv: [https://osf.io/94jd5/](https://osf.io/94jd5/)
+- topics as predictors
+  - might be ok in machine learning applications
+  - unsuitable in linear models (though examples have been published) 
+
+## Geometric analysis and topic modeling
+
+- topics as predictors
+  - might be ok in machine learning applications
+  - unsuitable in linear models (though examples have been published) 
+
+## Some WIP projects
+
+- qualitative research on elite principal investigators
+  - the typical criticisms of projectified science seem not to apply to the elites
+- nepotism in grant review panels
+  - the presence of a person closest to the successfull applicant seems to be non-random
+- comparison of national funding agencies with ERC
