@@ -494,18 +494,24 @@ tar_read_custom("pca_gender_disc_projection")
 - portfolio creation and analysis
   - probabilistic perspective on document content
 
-## Methodological considerations {style="font-size: 70%;"}
+## Methodological considerations {style="font-size: 80%;"}
 
+:::: {.columns style="font-size: 80%;"}
+::: {.column width="60%"}
 - topics as features
   - might be ok in machine learning applications
   - unsuitable in linear models (though examples have been published) 
   - sensitivity to linguistic effects via bag-of-words (e.g., Zipf's law and document length)
+:::
+![](https://geologyistheway.com/wp-content/uploads/2021/03/Ternary_plot_EXAMPLE-2048x1985.jpg){.absolute left="700" bottom="350" height="350"}
+::::
+::: {style="font-size: 80%;"}
 - CoDA (compositional data analysis) unlocks new possibilities for topic modeling
   - geometric data analysis<sup>1</sup>
   - linear models<sup>2</sup>
   - statistical evaluation<sup>3</sup>
   - principled removal of parts from the composition, imputation, ...
-
+:::
 ::: {style="font-size: 50%;"}
 <sup>1</sup> Aitchison, John. 1983. “Principal Component Analysis of Compositional Data.” Biometrika 70 (1): 57–65. https://doi.org/10.2307/2335943.]
 <br><sup>2</sup> Hron, K., P. Filzmoser, and K. Thompson. 2012. “Linear Regression with Compositional Explanatory Variables.” Journal of Applied Statistics 39 (5): 1115–28. https://doi.org/10.1080/02664763.2011.644268.
