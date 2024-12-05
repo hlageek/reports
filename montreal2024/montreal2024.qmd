@@ -504,7 +504,7 @@ tar_read_custom("pca_gender_disc_projection")
   - geometric data analysis<sup>1</sup>
   - linear models<sup>2</sup>
   - statistical evaluation<sup>3</sup>
-  - removal of parts from the composition
+  - principled removal of parts from the composition, imputation, ...
 
 ::: {style="font-size: 50%;"}
 <sup>1</sup> Aitchison, John. 1983. “Principal Component Analysis of Compositional Data.” Biometrika 70 (1): 57–65. https://doi.org/10.2307/2335943.]
