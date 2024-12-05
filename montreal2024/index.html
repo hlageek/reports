@@ -330,7 +330,7 @@
 
 <section class="slide level2">
 
-<h3 id="sociological-reflections-on-topic-modeling">Sociological reflections on topic modeling</h3>
+<h3 id="sociological-musings-on-topic-modeling">Sociological musings on topic modeling</h3>
 <div class="absolute" style="font-size: 90%;left: 0px; bottom: 250px; ">
 <p><a href="https://www.radimhladik.net/">Radim Hladík</a></p>
 </div>
@@ -367,10 +367,10 @@
 <li>Mapping science with topic modeling</li>
 </ol>
 <ul>
-<li><span style="font-size: 50%;">overview of the paper <a href="https://authors.elsevier.com/a/1k8dn,6w-Xyfz-">Hladík, Radim, and Yann Renisio. 2025. “Mapping Knowledge: Topic Analysis of Science Locates Researchers in Disciplinary Landscape.” Poetics 108 (January):101950.</a> <a href="https://doi.org/10.1016/j.poetic.2024.101950">https://doi.org/10.1016/j.poetic.2024.101950</a>.</span></li>
+<li><span style="font-size: 60%;">overview of the paper <a href="https://authors.elsevier.com/a/1k8dn,6w-Xyfz-">Hladík, Radim, and Yann Renisio. 2025. “Mapping Knowledge: Topic Analysis of Science Locates Researchers in Disciplinary Landscape.” Poetics 108 (January):101950.</a> <a href="https://doi.org/10.1016/j.poetic.2024.101950">https://doi.org/10.1016/j.poetic.2024.101950</a>.</span></li>
 </ul>
 <ol start="2" type="1">
-<li>Sociological musing on topic modeling</li>
+<li>Reflecting on the work with topic models</li>
 <li>Works in progress</li>
 </ol>
 </section>
@@ -2346,50 +2346,93 @@
 <section id="importance-of-document-topic-matrices" class="slide level2">
 <h2>Importance of document-topic matrices</h2>
 <ul>
+<li>topics not the end-goal but input to analysis</li>
 <li>meaningful (interpretable) columns in DT matrices
 <ul>
-<li>advanatge of topic vectors over embedding vectors</li>
+<li>advantage of topic vectors over embedding vectors</li>
 </ul></li>
 <li>two-mode analytical procedures (Mohr 1998)
 <ul>
-<li>we usually know more about documents than their content (e.g., authors)</li>
-<li></li>
+<li>relating topics to other (non-textual) variables</li>
+<li>we usually know more about documents than their content (e.g., authors, disciplines, institutions)</li>
+</ul></li>
+<li>portfolio creation and analysis
+<ul>
+<li>probabilistic perspective on document content</li>
 </ul></li>
 </ul>
 </section>
-<section id="methodological-implications" class="slide level2">
-<h2>Methodological implications</h2>
+<section id="methodological-considerations" class="slide level2" style="font-size: 70%;">
+<h2>Methodological considerations</h2>
 <ul>
-<li>topics as predictors
+<li>topics as features
 <ul>
 <li>might be ok in machine learning applications</li>
 <li>unsuitable in linear models (though examples have been published)</li>
+<li>sensitivity to linguistic effects via bag-of-words (e.g., Zipf’s law and document length)</li>
+</ul></li>
+<li>CoDA (compositional data analysis) unlocks new possibilities for topic modeling
+<ul>
+<li>geometric data analysis<sup>1</sup></li>
+<li>linear models<sup>2</sup></li>
+<li>statistical evaluation<sup>3</sup></li>
+<li>removal of parts from the composition</li>
 </ul></li>
 </ul>
+<div style="font-size: 50%;">
+<p><sup>1</sup> Aitchison, John. 1983. “Principal Component Analysis of Compositional Data.” Biometrika 70 (1): 57–65. https://doi.org/10.2307/2335943.] <br><sup>2</sup> Hron, K., P. Filzmoser, and K. Thompson. 2012. “Linear Regression with Compositional Explanatory Variables.” Journal of Applied Statistics 39 (5): 1115–28. https://doi.org/10.1080/02664763.2011.644268. <br><sup>3</sup> Lawley, Grace O., Peter A. Heeman, Jill K. Dolata, Eric Fombonne, and Steven Bedrick. 2023. “A Statistical Approach for Quantifying Group Difference in Topic Distributions Using Clinical Discourse Samples.” In Proceedings of the 24th Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL), 55–65. Prague, Czechia: Association for Computational Linguistics. https://aclanthology.org/2023.sigdial-1.5.</p>
+</div>
 </section>
-<section id="geometric-analysis-and-topic-modeling" class="slide level2">
+<section id="geometric-analysis-and-topic-modeling" class="slide level2" style="font-size: 80%;">
 <h2>Geometric analysis and topic modeling</h2>
 <ul>
-<li>topics as predictors
+<li>double dimensionality reduction
 <ul>
-<li>might be ok in machine learning applications</li>
-<li>unsuitable in linear models (though examples have been published)</li>
+<li>🗣️ language ➡️ ⚙️ <em>topic modeling</em> ➡️ 🤔 semantics ➡️ ⚙️ <em>PCA</em> ➡️ 🎖️&nbsp;symbolic distinction</li>
+</ul></li>
+<li>requires compositional transformation (or dichotomization for MCA)</li>
+<li>✅ the number of topics is not important (more tends to be better)</li>
+<li>✅ topical artifacts (e.g., a “stopwords” topic) are actually helpful</li>
+<li>✅ enhanced interpretation (no more reading tea leaves)
+<ul>
+<li>proximity/contribution to axes</li>
+<li>nearby topics</li>
+<li>opposing topics</li>
+<li>additional variables (document context)</li>
 </ul></li>
 </ul>
 </section>
-<section id="some-wip-projects" class="slide level2">
-<h2>Some WIP projects</h2>
+<section id="some-wip-projects" class="slide level2" style="font-size: 80%;">
+<h2>Some WIP projects 🏗️</h2>
 <ul>
 <li>qualitative research on elite principal investigators
 <ul>
-<li>the typical criticisms of projectified science seem not to apply to the elites</li>
+<li>typical criticisms of projectified science don’t apply to the elites</li>
 </ul></li>
 <li>nepotism in grant review panels
 <ul>
-<li>the presence of a person closest to the successfull applicant seems to be non-random</li>
+<li>does it help to have a close person on the panel?</li>
 </ul></li>
-<li>comparison of national funding agencies with ERC</li>
+<li>comparison of national funding agencies with ERC
+<ul>
+<li>differences in topic portfolios</li>
+</ul></li>
+<li>specialization in funded and unfunded research
+<ul>
+<li>is specialization a bonus or a penalty for becoming a PI?</li>
+</ul></li>
+<li>extending the work on topic modeling + GDA
+<ul>
+<li>sociological reflections</li>
+<li>new fields</li>
+</ul></li>
 </ul>
+<div class="fragment absolute" style="font-size: 1000%;left: 900px; bottom: 100px; ">
+<p>🤷</p>
+</div>
+<div class="fragment absolute" style="background: white; font-size: 1000%;left: 900px; bottom: 100px; ">
+<p>🙇</p>
+</div>
 <div class="quarto-auto-generated-content">
 <p><img src="https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png" class="slide-logo"></p>
 <div class="footer footer-default">

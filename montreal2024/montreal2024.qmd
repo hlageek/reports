@@ -16,7 +16,7 @@ execute:
   cache: true
 ---
 
-### Sociological reflections on topic modeling
+### Sociological musings on topic modeling
 
 
 
@@ -54,8 +54,8 @@ execute:
 ## Agenda 
 
 1. Mapping science with topic modeling
-  - [overview of the paper [Hladík, Radim, and Yann Renisio. 2025. “Mapping Knowledge: Topic Analysis of Science Locates Researchers in Disciplinary Landscape.” Poetics 108 (January):101950.](https://authors.elsevier.com/a/1k8dn,6w-Xyfz-) [https://doi.org/10.1016/j.poetic.2024.101950](https://doi.org/10.1016/j.poetic.2024.101950). ]{style="font-size: 50%;"}
-2. Sociological musing on topic modeling
+  - [overview of the paper [Hladík, Radim, and Yann Renisio. 2025. “Mapping Knowledge: Topic Analysis of Science Locates Researchers in Disciplinary Landscape.” Poetics 108 (January):101950.](https://authors.elsevier.com/a/1k8dn,6w-Xyfz-) [https://doi.org/10.1016/j.poetic.2024.101950](https://doi.org/10.1016/j.poetic.2024.101950). ]{style="font-size: 60%;"}
+2. Reflecting on the work with topic models
 3. Works in progress
 
 
@@ -485,28 +485,64 @@ tar_read_custom("pca_gender_disc_projection")
 
 ## Importance of document-topic matrices
 
+- topics not the end-goal but input to analysis
 - meaningful (interpretable) columns in DT matrices
-  - advanatge of topic vectors over embedding vectors
+  - advantage of topic vectors over embedding vectors
 - two-mode analytical procedures (Mohr 1998)
-  - we usually know more about documents than their content (e.g., authors)
-  - 
+  - relating topics to other (non-textual) variables
+  - we usually know more about documents than their content (e.g., authors, disciplines, institutions)
+- portfolio creation and analysis
+  - probabilistic perspective on document content
 
-## Methodological implications
+## Methodological considerations {style="font-size: 70%;"}
 
-- topics as predictors
+- topics as features
   - might be ok in machine learning applications
   - unsuitable in linear models (though examples have been published) 
+  - sensitivity to linguistic effects via bag-of-words (e.g., Zipf's law and document length)
+- CoDA (compositional data analysis) unlocks new possibilities for topic modeling
+  - geometric data analysis<sup>1</sup>
+  - linear models<sup>2</sup>
+  - statistical evaluation<sup>3</sup>
+  - removal of parts from the composition
 
-## Geometric analysis and topic modeling
+::: {style="font-size: 50%;"}
+<sup>1</sup> Aitchison, John. 1983. “Principal Component Analysis of Compositional Data.” Biometrika 70 (1): 57–65. https://doi.org/10.2307/2335943.]
+<br><sup>2</sup> Hron, K., P. Filzmoser, and K. Thompson. 2012. “Linear Regression with Compositional Explanatory Variables.” Journal of Applied Statistics 39 (5): 1115–28. https://doi.org/10.1080/02664763.2011.644268.
+<br><sup>3</sup> Lawley, Grace O., Peter A. Heeman, Jill K. Dolata, Eric Fombonne, and Steven Bedrick. 2023. “A Statistical Approach for Quantifying Group Difference in Topic Distributions Using Clinical Discourse Samples.” In Proceedings of the 24th Meeting of the Special Interest Group on Discourse and Dialogue (SIGDIAL), 55–65. Prague, Czechia: Association for Computational Linguistics. https://aclanthology.org/2023.sigdial-1.5.
+:::
 
-- topics as predictors
-  - might be ok in machine learning applications
-  - unsuitable in linear models (though examples have been published) 
+## Geometric analysis and topic modeling {style="font-size: 80%;"}
 
-## Some WIP projects
+- double dimensionality reduction
+  - 🗣️ language ➡️ ⚙️ _topic modeling_ ➡️ 🤔 semantics ➡️ ⚙️ _PCA_ ➡️ 🎖️&nbsp;symbolic distinction
+- requires compositional transformation (or dichotomization for MCA)
+- ✅ the number of topics is not important (more tends to be better)
+- ✅ topical artifacts (e.g., a "stopwords" topic) are actually helpful
+- ✅ enhanced interpretation (no more reading tea leaves)
+  - proximity/contribution to axes
+  - nearby topics
+  - opposing topics
+  - additional variables (document context)
+
+## Some WIP projects 🏗️ {style="font-size: 80%;"}
 
 - qualitative research on elite principal investigators
-  - the typical criticisms of projectified science seem not to apply to the elites
+  - typical criticisms of projectified science don't apply to the elites
 - nepotism in grant review panels
-  - the presence of a person closest to the successfull applicant seems to be non-random
+  - does it help to have a close person on the panel?
 - comparison of national funding agencies with ERC
+  - differences in topic portfolios
+- specialization in funded and unfunded research
+  - is specialization a bonus or a penalty for becoming a PI?
+- extending the work on topic modeling + GDA
+  - sociological reflections
+  - new fields
+
+::: {.fragment .absolute bottom="100" left="900" style="font-size: 1000%;"}
+🤷
+:::
+
+::: {.fragment .absolute bottom="100" left="900" style="background: white; font-size: 1000%;"}
+🙇
+:::
