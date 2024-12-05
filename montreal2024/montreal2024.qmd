@@ -33,19 +33,21 @@ execute:
 <br>🔗 [https://hlageek.github.io/reports/montreal2024](https://hlageek.github.io/reports/montreal2024){style="text-align: center"}
 :::
 
-## Academic background {style="font-size: 85%;"}
+## Academic background {style="font-size: 80%; line-height: 1.2;"}
 - MA in media studies
 - PhD in sociology (Charles University in Prague)
   - representations of "communist" past in post-communist cinema
   - post-communism and post-colonialism
 - postdoc in digital humanites at the National Institute of Informatics (Tokyo)
 - currently quantitative sociology of science
+  - [Hladík, Radim, and Neal Digre. 2022. “The Literature/Science Boundary in Sociological Articles: Using Fiction to Discover Patterns in Co-Authorship, Author Gender, and Citation Rank.” Current Sociology 70 (3): 381–402. [https://doi.org/10.1177/00113921211057605](https://doi.org/10.1177/00113921211057605).]{style="font-size: 50%;"}
 
-::: {.fragment .absolute bottom="220" left="850" style="font-size: 250%;"}
+
+::: {.fragment .absolute bottom="260" left="850" style="font-size: 250%; "}
 😕❓
 :::
 
-::: {.fragment}
+::: {.fragment style="font-size: 80%; line-height: 1.2;"}
 - artistic genres ➡️ social production of meaning
 - collective memory vs historiography ➡️ how do people establish knowledge as scientific?
 - interpretation of documents ➡️ computational text analysis
