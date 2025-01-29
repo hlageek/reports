@@ -1,0 +1,226 @@
+---
+format:
+  revealjs: 
+    chalkboard: 
+      buttons: false
+    reference-location: block 
+    logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
+    footer: Institute for the Future of Human Society (IFoHS), January 30, 2025 (virtual)
+    progress: true
+    embed-resources: false
+    mainfont: "Roboto"
+    css: quarto_presentations.css
+from: markdown+emoji
+output-file: index.html
+execute:
+  cache: true
+---
+
+### Personal research journey and vision for IFoHS's internationalization
+
+
+
+:::{.absolute bottom="250" left="0" style="font-size: 90%;"}
+[フラジークHLADÍK・ラジムRadim](https://www.radimhladik.net/)
+:::
+
+:::{.absolute bottom="40" left="0" style="font-size: 70%;"}
+
+🧑‍🔬 [Centre for Science, Technology, and Society Studies (CSTSS)](https://stss.flu.cas.cz)
+<br>🏛️ [Institute of Philosophy](https://www.flu.cas.cz/cz), [Czech Academy of Sciences](https://www.avcr.cz/en)
+<br>📫 [hladik@flu.cas.cz](mailto:hladik@flu.cas.cz)
+<br>🦋 [\@hlageek.bsky.social](https://bsky.app/profile/hlageek.bsky.social)
+<br>🔗 [https://hlageek.github.io/reports/ifohs2025](https://hlageek.github.io/reports/ifohs2025){style="text-align: center"}
+:::
+
+## Academic background {style="font-size: 80%; line-height: 1.2;"}
+
+- Charles University (Prague, Czech Republic)
+  - BA in Journalism
+  - MA in Media Studies
+  - PhD in Sociology 
+    - representations of "communist" past in post-communist cinema
+- Postdoc in digital humanites at the National Institute of Informatics (Tokyo, Japan)
+- currently computational sociology of science
+  
+::: {.fragment .absolute bottom="210" left="850" style="font-size: 250%; "}
+😕❓
+:::
+
+::: {.fragment style="font-size: 80%; line-height: 1.2;"}
+- artistic genres ➡️ social production of meaning
+- collective memory vs historiography ➡️ how do people establish knowledge as scientific?
+- interpretation of documents ➡️ computational text analysis
+:::
+
+## Agenda 
+
+::: {style="font-size: 80%;"}
+1. Examples of past research
+   1. post-colonialism and post-communism
+   2. social media as news sources
+   3. rhetorical styles in sociological papers
+2. Current research and future plans
+   1. science mapping
+   2. sociology of science
+   3. culture mapping?
+   4. scientific software development
+3. Vision for IFoHS's internationalization
+:::
+
+## Post-colonialism and post-communism
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+:::{.citation}
+  Hladík, Radim. **“A Theory’s Travelogue: Post-Colonial Theory in Post-Socialist Space.”** Teorie Vědy / Theory of Science 33, no. 4 (2011): 561–90. https://doi.org/10.46938/tv.2011.139
+:::
+
+:::
+
+::: {.column width="60%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/empires.jpg){height=500 fig-align="center"}
+:::
+
+::::
+
+## Social media as news sources
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+:::{.citation}
+  Hladík, Radim, and Václav Štětka. **“The Powers That Tweet: Social Media as News Sources in the Czech Republic.”** Journalism Studies 18, no. 2 (2017): 154–74. https://doi.org/10.1080/1461670X.2015.1046995.
+  ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/socmedia2.jpg){height=230 fig-align="center"}
+:::
+
+:::
+
+::: {.column width="60%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/socmedia.jpg){height=600 fig-align="center"}
+:::
+
+::::
+
+
+## Rhetorical styles in sociological papers
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+:::{.citation}
+  Hladík, Radim, and Neal Digre. **“The Literature/Science Boundary in Sociological Articles: Using Fiction to Discover Patterns in Co-Authorship, Author Gender, and Citation Rank.”** Current Sociology 70, no. 3 (2022): 381–402. https://doi.org/10.1177/00113921211057605.
+
+  ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/socstyles2.jpg){height=230 fig-align="center"}
+:::
+
+:::
+
+::: {.column width="60%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/socstyles.png){height=600 fig-align="center"}
+:::
+
+::::
+
+## Mapping science
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+:::{.citation}
+ Hladík, Radim, and Yann Renisio. **“Mapping Knowledge: Topic Analysis of Science Locates Researchers in Disciplinary Landscape.”** Poetics 108 (January 1, 2025): 101950. https://doi.org/10.1016/j.poetic.2024.101950.
+
+
+  ![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/mapa3.png){height=230 fig-align="center"}
+:::
+
+:::
+
+::: {.column width="60%"}
+::: {.r-stack}
+
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/mapa.png){height=500 fig-align="center"}
+
+::: {.fragment}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/mapa2.png){height=500 fig-align="center"}:::
+:::
+:::
+:::
+
+::::
+
+
+## Work in progress (sociology of science)
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+- qualitative analysis of interviews with elite principal investigators (with Nina  Fárová)
+- comparison of European funding agencies (with Chérifa Boukacem-Zeghmouri and Marc Bertin)
+
+:::
+
+::: {.column width="60%"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/erc.png){height=400 fig-align="center"}
+:::
+
+::::
+
+## Future plans (sociology of culture)
+
+::: {.r-stack}
+
+::: { style="overflow-y: scroll; height:700px;"}
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/music2.png){fig-align="center}
+:::
+
+::: {.fragment .absolute }
+![](https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/music.png)
+:::
+:::
+
+## Requal
+
+Free and open source software for qualitative data analysis ([www.requal.app](https://requal.app/))
+
+{{< video https://owncloud.cesnet.cz/remote.php/dav/public-files/VWebZz4s4UKbC9r/requal.mp4 height="500">}}
+
+## Personal internationalization
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTttWZPYKxnaxY8D4tsAnFr9Ks4fEIxamC5zw&s)
+![](https://www.georgetown.edu/wp-content/uploads/2019/10/Georgetown_logo_blueRGB-300x210.jpg){height="180px"}
+![](https://m.media-amazon.com/images/I/61Fa-pNEFXL._AC_UF894,1000_QL80_.jpg){height="180px"}
+![](https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/University_of_Cape_Town_logo.svg/1200px-University_of_Cape_Town_logo.svg.png){height="180px"}
+![](https://www.eduopinions.com/wp-content/uploads/2017/08/Universit%C3%A8-Claude-bernard-lyon-1-UCBL1-logo.png){height="180px"}
+![](https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_EHESS_2021_RVB.jpg){height="180px"}
+![](https://studyinfocus.ru/wp-content/uploads/2017/08/UTR_Logo.png){height="180px"}
+![](https://research.nii.ac.jp/il/logos/01_nii_logo_A.gif){height="100px"}
+
+## Ideas to promote IFoHS internationalization 🌏
+
+:::: {.columns}
+
+::: {.column width="30%"}
+::: {style="font-size: 80%"}
+- ✅ Kyoto University already has excellent reputation
+- ☑️ despite governmental support, the intensity of internationalization remains low at Japanese universities
+:::
+:::
+
+::: {.column width="70%"}
+
+- 💴 use and attract external resources
+- 🎯 identify and target key stakeholders
+- 💿 Open Science, FAIR data, and promotion of infrastructures
+- 👨‍🏫 learn from each other
+- 👽 embrace diversity
+- 📈 monitor progress
+- 👨‍💻 tailor communication to user needs
+:::
+::::

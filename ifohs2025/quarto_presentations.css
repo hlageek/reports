@@ -1,0 +1,27 @@
+h1, h2, h3, h4, h5, h6 {
+  color: grey !important;
+  /* color: rgb(216,107,50) !important; */
+}
+
+h2 {
+  font-size: 90% !important;
+}
+
+.gt_table, .gt_col_heading, .gt_group_heading, .gt_column_spanner {
+  color: black !important;
+  font-weight: bold !important; 
+  font-size: large !important; 
+}
+
+a {
+color: #505050 !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.citation {
+  line-height: 1.2 !important;
+  font-size: 60%;
+}
