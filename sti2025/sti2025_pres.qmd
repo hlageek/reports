@@ -1,0 +1,47 @@
+---
+format:
+  revealjs: 
+    chalkboard: 
+      buttons: false
+    reference-location: block 
+    logo: https://owncloud.cesnet.cz/remote.php/dav/public-files/VCwCL371sI8okcL/cstss_A3_logomark_color_black.png 
+    footer: 28th International Conference on Science, Technology and Innovation Indicators, Berlin, September 18-20, 2024
+    progress: true
+    embed-resources: false
+    css: quarto_presentations.css
+revealjs-plugins:
+  - editable
+filters:
+  - editable
+from: markdown+emoji
+output-file: index.html
+execute:
+  cache: true
+---
+
+
+### Researchers in the disciplinary matrix
+#### A geometric map of science based on topics and disciplines
+
+
+
+:::{.absolute bottom="280" left="0" style="font-size: 70%;"}
+[Radim Hladík](https://www.radimhladik.net/),<sup>1</sup> [Yann Renisio](https://www.sciencespo.fr/osc/fr/content/yann-renisio.html)<sup>2</sup>
+:::
+
+:::{.absolute bottom="90" left="0" style="font-size: 50%;"}
+
+<sup>1</sup> Centre for Science, Technology, and Society Studies (CSTSS)<br>
+Institute of Philosophy, Czech Academy of Sciences<br>
+[hladik@flu.cas.cz](mailto:hladik@flu.cas.cz), [@hlageek@sciences.social](https://scholar.social/@hlageek)
+<br><br>
+<sup>2</sup> Centre for Research on social InequalitieS (CRIS)<br>
+CNRS/Sciences-Po<br>
+[yann.renisio@sciencespo.fr](mailto:yann.renisio@sciencespo.fr) 
+:::
+
+::: {.absolute width=518.966px height=50.9152px left=524.335px top=595.041px style="font-size: 30px;"}
+[https://hlageek.github.io/reports/sti2025](https://hlageek.github.io/reports/sti2025){style="text-align: center"}
+:::
+
+# Test
